@@ -34,17 +34,40 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 - **OTA (Over-The-Air) Updates:** Update firmware directly from the Arduino IDE.
 - **EEPROM Configuration Store:** Store configuration settings in EEPROM memory for persistent operation.
 
-## TODO - Hardware Setup
+## Hardware Setup
 
-**Wiring Schematic:** \[Insert Wiring Schematic Here\]
+**Wiring Schematic:**
+
+![Simple Schematic](Images/Device/Schematic.png)
 
 - Refer to the provided wiring schematic for proper connection between the Wemos D1 mini microcontroller and the Nice-Power bench power supply via UART.
 
+![Nice-Power UART Port](Images/Device/1-Inside.jpg)
+
+- You need to connect Nice-Power supply UART Port to the WEMOS D1 Mini.
+- RX from Nice-Power needs to be connected to the D5 pin on the WEMOS D1 Mini
+- TX from Nice-Power needs to be connected to the D6 pin on the WEMOS D1 Mini
+- We need to connect GND Pin to the WEMOS D1 Mini GND pin and also to the Nice-Power USB GND pin.
+
+![Nice-Power UART Port](Images/Device/2-Inside.jpg)
+
+- We need to power the WEMOS D1 Mini from the Nice-Power supply USB port.
+
+![Nice-Power UART Port](Images/Device/3-Inside.jpg)
+
+![Nice-Power UART Port](Images/Device/4-Inside.jpg)
+
+![Nice-Power UART Port](Images/Device/5-Inside.jpg)
+
 **3D Printed Case for Wemos D1 mini:**
 
-- Customize your setup with a 3D printed case designed specifically for the Wemos D1 mini microcontroller.
+- I used this 3D printed case designed specifically for the Wemos D1 mini microcontroller - https://makerworld.com/en/models/20157
 
-## Images
+![3D Printed Case](Images/3DModelCase/3DModelWemosCase.PNG)
+
+- You can find also the STL files in "3DModelCaseFiles" directory. 
+
+## UI Interface
 
 #### Big Screen - Dashboard
 ![Big Screen - Dashboard](Images/UI/UI-1.PNG)
