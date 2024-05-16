@@ -12,7 +12,12 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 ## Features
 
 ### User Interface
+#### Big Screen - Dashboard Sample
 ![Nice-Power Bench Power Supply](Images/UI/UI-1.PNG)
+
+#### Mobile Screen - Dashboard Sample
+
+![Nice-Power Bench Power Supply](Images/UI/UI-5.PNG)
 
 - **Real-time Monitoring:** Dynamic gauges provide live updates on voltage, current, and power output.
 - **Interactive Charts:** Dive deeper into your data with interactive charts for voltage, current, and power.
