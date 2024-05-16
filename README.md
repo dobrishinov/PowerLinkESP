@@ -34,6 +34,21 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 - **OTA (Over-The-Air) Updates:** Update firmware directly from the Arduino IDE.
 - **EEPROM Configuration Store:** Store configuration settings in EEPROM memory for persistent operation.
 
+## UI Interface
+
+#### Big Screen - Dashboard
+![Big Screen - Dashboard](Images/UI/UI-1.PNG)
+
+#### Big Screen - Settings Page
+![Nice-Power Bench Power](Images/UI/UI-2.PNG)
+
+#### Mobile Screen - Dashboard
+![Mobile Screen - Dashboard](Images/UI/UI-4.PNG)
+
+When we scrolling the top display with values is hidden, but we have handy pinned display with the values at the bottom.
+
+![Mobile Screen - Dashboard](Images/UI/UI-5.PNG)
+
 ## Hardware Setup
 
 **Wiring Schematic:**
@@ -66,21 +81,6 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 ![3D Printed Case](Images/3DModelCase/3DModelWemosCase.PNG)
 
 - You can find also the STL files in "3DModelCaseFiles" directory. 
-
-## UI Interface
-
-#### Big Screen - Dashboard
-![Big Screen - Dashboard](Images/UI/UI-1.PNG)
-
-#### Big Screen - Settings Page
-![Nice-Power Bench Power](Images/UI/UI-2.PNG)
-
-#### Mobile Screen - Dashboard
-![Mobile Screen - Dashboard](Images/UI/UI-4.PNG)
-
-When we scrolling the top display with values is hidden, but we have handy pinned display with the values at the bottom.
-
-![Mobile Screen - Dashboard](Images/UI/UI-5.PNG)
 
 ## TODO - Installation
 
