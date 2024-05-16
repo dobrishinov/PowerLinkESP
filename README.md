@@ -12,15 +12,6 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 ## Features
 
 ### User Interface
-#### Big Screen - Dashboard
-![Big Screen - Dashboard](Images/UI/UI-1.PNG)
-
-#### Mobile Screen - Dashboard
-![Mobile Screen - Dashboard](Images/UI/UI-4.PNG)
-
-When we scrolling the top display with values is hidden, but we have handy pinned display with the values at the bottom.
-
-![Mobile Screen - Dashboard](Images/UI/UI-5.PNG)
 
 - **Real-time Monitoring:** Dynamic gauges provide live updates on voltage, current, and power output.
 - **Interactive Charts:** Dive deeper into your data with interactive charts for voltage, current, and power.
@@ -29,8 +20,7 @@ When we scrolling the top display with values is hidden, but we have handy pinne
 - **Customizable History Range:** Set the history range in minutes for chart data.
 
 ### Network Configuration
-#### Settings Page
-![Nice-Power Bench Power](Images/UI/UI-2.PNG)
+
 - **Dynamic & Static IP Support:** Choose between dynamic and static IP assignment.
 - **WIFI AP or STA Mode:** Configure the ESP8266 in access point (AP) or station (STA) mode.
 - **Automatic AP Mode:** Automatically switch to AP mode if the configured station (STA) network is unavailable.
@@ -54,7 +44,22 @@ When we scrolling the top display with values is hidden, but we have handy pinne
 
 - Customize your setup with a 3D printed case designed specifically for the Wemos D1 mini microcontroller.
 
-## Installation
+## Images
+
+#### Big Screen - Dashboard
+![Big Screen - Dashboard](Images/UI/UI-1.PNG)
+
+#### Big Screen - Settings Page
+![Nice-Power Bench Power](Images/UI/UI-2.PNG)
+
+#### Mobile Screen - Dashboard
+![Mobile Screen - Dashboard](Images/UI/UI-4.PNG)
+
+When we scrolling the top display with values is hidden, but we have handy pinned display with the values at the bottom.
+
+![Mobile Screen - Dashboard](Images/UI/UI-5.PNG)
+
+## TODO - Installation
 
 1. **Clone the Repository:**
    [git clone https://github.com/yourusername/powerlink-esp.git](https://github.com/dobrishinov/PowerLinkESP.git)
@@ -66,20 +71,17 @@ When we scrolling the top display with values is hidden, but we have handy pinne
 
 ## Usage
 
-1. **Accessing the User Interface:**
+**Accessing the User Interface:**
 
 - Connect the Wemos D1 mini to your local network and obtain its IP address.
 - Open a web browser and enter the IP address of the Wemos D1 mini to access the user interface.
-
-1. **Optimizing Performance:**
-
 - Explore the intuitive user interface to monitor real-time data from the bench power supply.
 - Utilize interactive charts and export functionality to analyze historical data.
 - Customize network settings and configuration options as needed.
 
 ## Contributing
 
-We welcome contributions from the community to further enhance the functionality and usability of PowerLinkESP. Whether you're a seasoned developer or a passionate enthusiast, your contributions are invaluable to our shared success. Feel free to explore our repository, open issues, submit pull requests, or engage in discussions to contribute to the ongoing development efforts.
+Contributions from the community is welcome! I'll be happy for further enhance the functionality and usability of PowerLinkESP. Whether you're a seasoned developer or a passionate enthusiast, your contributions are invaluable to shared success. Feel free to explore the repository, open issues, submit pull requests, or engage in discussions to contribute to the ongoing development efforts.
 
 ## License
 
