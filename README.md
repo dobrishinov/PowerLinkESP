@@ -18,7 +18,7 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 #### Mobile Screen - Dashboard
 ![Mobile Screen - Dashboard](Images/UI/UI-4.PNG)
 
-When we scrolling and the top display is hidden, we have pinned display with the values at the bottom.
+When we scrolling the top display with values is hidden, but we have handy pinned display with the values at the bottom.
 
 ![Mobile Screen - Dashboard](Images/UI/UI-5.PNG)
 
