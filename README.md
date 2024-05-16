@@ -2,7 +2,7 @@
 
 PowerLinkESP is an advanced firmware designed to enhance Nice-Power bench power supplies with ESP8266 connectivity, providing advanced monitoring and control capabilities.
 
-![Nice-Power Bench Power Supply](Images/UI/Devices.png)
+![Different Devices with the software](Images/UI/Devices.png)
 ![Nice-Power Bench Power Supply](Images/Device/1-Nicepower-Kuai-SPS-W3010.jpg)
 
 ## Overview
@@ -12,12 +12,15 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 ## Features
 
 ### User Interface
-#### Big Screen - Dashboard Sample
-![Nice-Power Bench Power Supply](Images/UI/UI-1.PNG)
+#### Big Screen - Dashboard
+![Big Screen - Dashboard](Images/UI/UI-1.PNG)
 
-#### Mobile Screen - Dashboard Sample
+#### Mobile Screen - Dashboard
+![Mobile Screen - Dashboard](Images/UI/UI-4.PNG)
 
-![Nice-Power Bench Power Supply](Images/UI/UI-5.PNG)
+When we scrolling and the top display is hidden, we have pinned display with the values at the bottom.
+
+![Mobile Screen - Dashboard](Images/UI/UI-5.PNG)
 
 - **Real-time Monitoring:** Dynamic gauges provide live updates on voltage, current, and power output.
 - **Interactive Charts:** Dive deeper into your data with interactive charts for voltage, current, and power.
@@ -26,8 +29,8 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 - **Customizable History Range:** Set the history range in minutes for chart data.
 
 ### Network Configuration
-
-![Nice-Power Bench Power Supply](Images/UI/UI-2.PNG)
+#### Settings Page
+![Nice-Power Bench Power](Images/UI/UI-2.PNG)
 - **Dynamic & Static IP Support:** Choose between dynamic and static IP assignment.
 - **WIFI AP or STA Mode:** Configure the ESP8266 in access point (AP) or station (STA) mode.
 - **Automatic AP Mode:** Automatically switch to AP mode if the configured station (STA) network is unavailable.
