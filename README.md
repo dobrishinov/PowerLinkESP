@@ -77,30 +77,96 @@ When we scrolling the top display with values is hidden, but we have handy pinne
 **3D Printed Case for Wemos D1 mini:**
 
 - I used this 3D printed case designed specifically for the Wemos D1 mini microcontroller - https://makerworld.com/en/models/20157
+- You can find also the STL files in "3DModelCaseFiles" directory. 
 
 ![3D Printed Case](Images/3DModelCase/3DModelWemosCase.PNG)
 
-- You can find also the STL files in "3DModelCaseFiles" directory. 
-
-## TODO - Installation
+## Installation
 
 1. **Clone the Repository:**
    [git clone https://github.com/yourusername/powerlink-esp.git](https://github.com/dobrishinov/PowerLinkESP.git)
-2. **Upload Firmware:**
 
-- Open the project in Arduino IDE or your preferred development environment.
-- Select the appropriate Wemos D1 mini board from the board manager.
-- Upload the firmware to your Wemos D1 mini device.
+2. **Setup Arduino IDE:**
+   - Download and Install Arduino IDE:
+      - The project is build on Arduino version ***1.8.19***, you can try to build it with the latest version, but in case of a problem try with ***1.8.19***
+      - Install the IDE by following the instructions for your operating system.
+
+   - Install Required Libraries:
+   
+      - Open Arduino IDE.
+      - Go to **Sketch > Include Library > Manage Libraries...**.
+      - In the Library Manager, search for and install the following libraries:
+         - **ESPAsyncTCP** (version 1.2.2 from Me-No-Dev)
+         - **ESPAsyncWebServer** (version 1.2.3 from Me-No-Dev)
+         - **TaskScheduler** (version 3.7.0 from Anatoli Arkhipenko)
+         - ***The Libraries are also included in this repository***
+   
+   - Add ESP8266 Board to Arduino IDE:
+      - Go to **File > Preferences**.
+      - In the "Additional Board Manager URLs" field, add the following URL: 
+      ```http://arduino.esp8266.com/stable/package_esp8266com_index.json```
+      - Click **OK**
+      - Go to **Tools > Board > Boards Manager**.
+      - Search for **esp8266** and install **esp8266 by ESP8266 Community**.
+
+3. Upload Firmware:
+   - Open the Project:
+      - Open the Arduino IDE.
+      - Go to **File > Open** and navigate to the cloned repository folder. Open the .ino file within the repository.
+
+   - Select the Board:
+      - Go to **Tools > Board > ESP8266 Boards** and select **LOLIN(WeMos) D1 mini (clone)**.
+
+   - Configure Board Settings:
+
+      - Ensure the following settings under the Tools menu:
+         - Board: LOLIN(WeMos) D1 mini (clone)
+         - Flash Size: 4M (FS:2MB OTA:~1019KB)
+         - Upload Speed: 921600
+   - Connect the Device:
+      - Connect your LOLIN(WeMos) D1 mini (clone) mini to your computer via USB.
+
+   - Upload the Firmware:
+      - Click the Upload button (right arrow icon) in the Arduino IDE.
+      - Wait for the IDE to compile and upload the firmware to your LOLIN(WeMos) D1 mini (clone) device.
+
+   - Upload the Web Page Data files
+
+      - Install **Arduino ESP8266 LittleFS Filesystem Uploader**
+      - Open your Arduino directory and put the ***esp8266fs.jar*** which you can find 
+      in the repository Arduino directory. The path should be something like this one:
+      ```~Documents/Arduino/tools/ESP8266FS/tool/esp8266fs.jar```
+      - If you have problems with this step please check the links below:
+         - https://randomnerdtutorials.com/install-esp8266-nodemcu-littlefs-arduino/
+         - https://github.com/earlephilhower/arduino-esp8266littlefs-plugin
+      - Then make sure you have selected a board, port, and closed Serial Monitor.
+      - Select **Tools > ESP8266 LittleFS Data Upload** menu item. This should start uploading the files into ESP8266 flash file system. When done, IDE status bar will display LittleFS Image Uploaded message. Might take a few minutes for large file system sizes.
+      
+
+4. **Additional Notes**
+
+   - Make sure you have the correct COM port selected under **Tools > Port**.
+   - If you encounter any issues during the upload process, ensure your device drivers are properly installed and try using a different USB cable.
+   - The default WIFI password for the Access Point is ***12345678***. If you want to change it please edit the password for the AP in the code. The variable is ***fallbackPassword***.
 
 ## Usage
 
 **Accessing the User Interface:**
 
-- Connect the Wemos D1 mini to your local network and obtain its IP address.
-- Open a web browser and enter the IP address of the Wemos D1 mini to access the user interface.
-- Explore the intuitive user interface to monitor real-time data from the bench power supply.
-- Utilize interactive charts and export functionality to analyze historical data.
-- Customize network settings and configuration options as needed.
+There is two working modes:
+   - Access Point Mode
+      - On First boot the device is created Access Point with name: ***LabPowerSupply_[IdOfTheESP]***
+      - The default WIFI password for the Access Point is ***12345678***. (If you want to change it please edit the password for the AP in the code. The variable is ***fallbackPassword***).
+      - Open in the URL **192.168.4.1** and you can see the UI Interface.
+      - Go to the Settings page and add your WIFI credentials if you want to use the device in your local network.
+
+   - Station Mode
+      - Connect the Wemos D1 mini to your local network and obtain its IP address.
+      - Open a web browser and enter the IP address of the Wemos D1 mini to access the user interface.
+      - Explore the intuitive user interface to monitor real-time data from the bench power supply.
+      - Utilize interactive charts and export functionality to analyze historical data.
+      - Customize network settings and configuration options as needed.
+      - If the WIFI network is not reachable, the device will run automatically in Access Point Mode.
 
 ## Contributing
 
@@ -112,4 +178,4 @@ This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) 
 
 ## Contact
 
-For feedback, or collaboration opportunities, please contact [dobrishinov@gmail.com](mailto:dobrishinov@gmail.com).
+For feedback, or collaboration opportunities, please contact [dobrishinov@gmail.com](mailto:dobrishinov@gmail.com)

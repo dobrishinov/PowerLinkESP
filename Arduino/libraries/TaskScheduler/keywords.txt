@@ -1,0 +1,151 @@
+#######################################
+# Syntax Coloring Map For TaskManager
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Scheduler	KEYWORD1
+StatusRequest	KEYWORD1
+Task	KEYWORD1
+TS	KEYWORD1
+TaskScheduler	KEYWORD1
+TsScheduler	KEYWORD1
+TsStatusRequest	KEYWORD1
+TsTask	KEYWORD1
+TsTaskScheduler	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+abort	KEYWORD2
+addTask	KEYWORD2
+adjust	KEYWORD2
+allowSleep	KEYWORD2
+Callback	KEYWORD2
+cancel	KEYWORD2
+canceled	KEYWORD2
+completed	KEYWORD2
+cpuLoadReset	KEYWORD2
+currentLts	KEYWORD2
+delay	KEYWORD2
+deleteTask	KEYWORD2
+disable	KEYWORD2
+disableAll	KEYWORD2
+disableOnLastIteration	KEYWORD2
+enable	KEYWORD2
+enableAll	KEYWORD2
+enableDelayed	KEYWORD2
+enableIfNot	KEYWORD2
+execute	KEYWORD2
+forceNextIteration	KEYWORD2
+getControlPoint	KEYWORD2
+getCount	KEYWORD2
+getCount	KEYWORD2
+getCpuLoadCycle	KEYWORD2
+getCpuLoadIdle	KEYWORD2
+getCpuLoadTotal	KEYWORD2
+getCurrentTask	KEYWORD2
+getFirstTask	KEYWORD2
+getId	KEYWORD2
+getInternalStatusRequest	KEYWORD2
+getInterval	KEYWORD2
+getIterations	KEYWORD2
+getLastTask	KEYWORD2
+getLtsPointer	KEYWORD2
+getNextTask	KEYWORD2
+getOverrun	KEYWORD2
+getPreviousTask	KEYWORD2
+getRunCounter	KEYWORD2
+getSchedulingOption	KEYWORD2
+getSelfDestruct	KEYWORD2
+getStartDelay	KEYWORD2
+getStatus	KEYWORD2
+getStatusRequest	KEYWORD2
+getTimeout	KEYWORD2
+init	KEYWORD2
+isEnabled	KEYWORD2
+isFirstIteration	KEYWORD2
+isLastIteration	KEYWORD2
+isOverrun	KEYWORD2
+OnDisable	KEYWORD2
+OnEnable	KEYWORD2
+pause	KEYWORD2
+pending	KEYWORD2
+resetTimeout	KEYWORD2
+restart	KEYWORD2
+restartDelayed	KEYWORD2
+resume	KEYWORD2
+set	KEYWORD2
+setCallback	KEYWORD2
+setControlPoint	KEYWORD2
+setHighPriorityScheduler	KEYWORD2
+setId	KEYWORD2
+setInterval	KEYWORD2
+setIterations	KEYWORD2
+setLtsPointer	KEYWORD2
+setOnDisable	KEYWORD2
+setOnEnable	KEYWORD2
+setSchedulingOption	KEYWORD2
+setSelfDestruct	KEYWORD2
+setSleepMethod	KEYWORD2
+setTimeout	KEYWORD2
+setWaiting	KEYWORD2
+signal	KEYWORD2
+signalComplete	KEYWORD2
+startNow	KEYWORD2
+timedOut	KEYWORD2
+timeUntilNextIteration	KEYWORD2
+untilTimeout	KEYWORD2
+waitFor	KEYWORD2
+waitForDelayed	KEYWORD2
+yield	KEYWORD2
+yieldOnce	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+
+_TASK_DEBUG	LITERAL1
+_TASK_INLINE	LITERAL1
+_TASK_LTS_POINTER	LITERAL1
+_TASK_MICRO_RES	LITERAL1
+_TASK_OO_CALLBACKS	LITERAL1
+_TASK_PRIORITY	LITERAL1
+_TASK_SLEEP_ON_IDLE_RUN	LITERAL1
+_TASK_STATUS_REQUEST	LITERAL1
+_TASK_STD_FUNCTION	LITERAL1
+_TASK_TIMECRITICAL	LITERAL1
+_TASK_TIMEOUT	LITERAL1
+_TASK_WDT_IDS	LITERAL1
+_TASK_EXPOSE_CHAIN	LITERAL1
+_TASK_DEFINE_MILLIS	LITERAL1
+_TASK_SCHEDULING_OPTIONS	LITERAL1
+_TASK_DEFINE_MILLIS	LITERAL1
+_TASK_EXTERNAL_TIME	LITERAL1
+_TASK_THREAD_SAFE	LITERAL1
+_TASK_SELF_DESTRUCT	LITERAL1
+SleepCallback	LITERAL1
+TASK_FOREVER	LITERAL1
+TASK_HOUR	LITERAL1
+TASK_IMMEDIATE	LITERAL1
+TASK_MILLISECOND	LITERAL1
+TASK_MINUTE	LITERAL1
+TASK_NOTIMEOUT	LITERAL1
+TASK_ONCE	LITERAL1
+TASK_SECOND	LITERAL1
+TaskCallback	LITERAL1
+TaskOnDisable	LITERAL1
+TaskOnEnable	LITERAL1
+TASK_SCHEDULE	LITERAL1
+TASK_SCHEDULE_NC	LITERAL1
+TASK_INTERVAL	LITERAL1
+TASK_SR_OK	LITERAL1
+TASK_SR_ERROR	LITERAL1
+TASK_SR_CANCEL	LITERAL1
+TASK_SR_ABORT	LITERAL1
+TASK_SR_TIMEOUT	LITERAL1
+
+#######################################
+
