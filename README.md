@@ -96,9 +96,9 @@ When we scrolling the top display with values is hidden, but we have handy pinne
       - Open Arduino IDE.
       - Go to **Sketch > Include Library > Manage Libraries...**.
       - In the Library Manager, search for and install the following libraries:
-         - **ESPAsyncTCP** (version 1.2.2 from Me-No-Dev)
-         - **ESPAsyncWebServer** (version 1.2.3 from Me-No-Dev)
-         - **TaskScheduler** (version 3.7.0 from Anatoli Arkhipenko)
+         - **ESPAsyncTCP** (version ***1.2.2*** from Me-No-Dev)
+         - **ESPAsyncWebServer** (version ***1.2.3*** from Me-No-Dev)
+         - **TaskScheduler** (version ***3.7.0*** from Anatoli Arkhipenko)
          - ***The Libraries are also included in this repository***
    
    - Add ESP8266 Board to Arduino IDE:
@@ -120,9 +120,9 @@ When we scrolling the top display with values is hidden, but we have handy pinne
    - Configure Board Settings:
 
       - Ensure the following settings under the Tools menu:
-         - Board: LOLIN(WeMos) D1 mini (clone)
-         - Flash Size: 4M (FS:2MB OTA:~1019KB)
-         - Upload Speed: 921600
+         - Board: ***LOLIN(WeMos) D1 mini (clone)***
+         - Flash Size: ***4M (FS:2MB OTA:~1019KB)***
+         - Upload Speed: ***921600***
    - Connect the Device:
       - Connect your LOLIN(WeMos) D1 mini (clone) mini to your computer via USB.
 
@@ -157,7 +157,7 @@ There is two working modes:
    - Access Point Mode
       - On First boot the device is created Access Point with name: ***LabPowerSupply_[IdOfTheESP]***
       - The default WIFI password for the Access Point is ***12345678***. (If you want to change it please edit the password for the AP in the code. The variable is ***fallbackPassword***).
-      - Open in the URL **192.168.4.1** and you can see the UI Interface.
+      - Open in the URL ***192.168.4.1*** and you can see the UI Interface.
       - Go to the Settings page and add your WIFI credentials if you want to use the device in your local network.
 
    - Station Mode
