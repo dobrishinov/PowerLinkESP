@@ -109,7 +109,7 @@ When we scrolling the top display with values is hidden, but we have handy pinne
       - Go to **Tools > Board > Boards Manager**.
       - Search for **esp8266** and install **esp8266 by ESP8266 Community**.
 
-3. Upload Firmware:
+3. **Upload Firmware:**
    - Open the Project:
       - Open the Arduino IDE.
       - Go to **File > Open** and navigate to the cloned repository folder. Open the .ino file within the repository.
