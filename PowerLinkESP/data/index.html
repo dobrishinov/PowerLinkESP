@@ -4,6 +4,8 @@
 <head>
 	<title>Voltage and Current Monitor</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="shortcut icon"
+		href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbUlEQVR4nGNgGLQgPTniaFdzzn0Q7mzMeRAVHrCOaM0uLi78cyaVP/r/ZvN/EL58ZMbvqHD/KEL6GF1dXcVAjNBQ//Brx2f/hRkwoaPgtoWFBSdIzsbGRhSkFkOzvb19i5OTkxaIk5UWsfzPy41gzSBclBe/DaYQpAakFtkQRpCAo6OjMUygqSr9BEzz48uL/keFB5zJyYyZnZwQlgI1RM/e3r6DgYGBicHBwaHZ0dFRH6bZzc1NaOGMyicwA2B49YKGl7GxQV4wdSA9IL0M6AbY2tpKJscFL0+JD11RXZr8GBqI31ITw5uR/Qw3gIGBgRFqCNwLUIMU1y1ufPXu7sr/WakRm5DlQF5wcHBoB3sBWyCCQFJ8cNuL60v/lxUmnnN1deWGidvb2+ugByIMMEKjCAwqihP3TegouO/r66sNV8HAwACNagzNDGiKuKPDA94lxoXF4VWICwT5+4THRQfPIUszCICiEjmAaAoAQJWqDvqsE2oAAAAASUVORK5CYII=" />
 	<style>
 		body {
 			background-color: black;
@@ -67,6 +69,7 @@
 		#top-dashboard {
 			text-align: center;
 			padding: 35px 0 0 0;
+			margin-bottom: 1rem;
 		}
 
 		#voltageChart,
@@ -86,6 +89,9 @@
 		}
 
 		.tooltip {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			position: relative;
 			border-bottom: 1px dotted black;
 			text-align: center;
@@ -98,7 +104,7 @@
 			color: #fff;
 			text-align: center;
 			border-radius: 6px;
-			padding: 8px 0;
+			padding: 8px 2px;
 			position: absolute;
 			z-index: 1;
 			bottom: 100%;
@@ -121,11 +127,14 @@
 			visibility: visible;
 		}
 
-		.input-minutes {
+		.input-minutes,
+		.button {
 			margin: 10px;
 			padding: 5px;
 			border-radius: 5px;
 			border: 2px solid #e88504;
+			flex: 1;
+			max-width: 100px;
 		}
 
 		.button {
@@ -153,7 +162,6 @@
 			min-height: 100%;
 			height: calc(100vh + 10rem);
 			position: relative;
-			padding-top: 24px;
 			text-align: center;
 		}
 
@@ -204,6 +212,16 @@
 			.wrapper {
 				height: calc(100vh + 60rem);
 			}
+
+			.tooltip {
+				flex-direction: column;
+			}
+
+			.input-minutes,
+			.button {
+				margin: 5px 0;
+				width: 100%;
+			}
 		}
 	</style>
 </head>
@@ -224,7 +242,14 @@
 		<label for="points">History Range In Minutes:</label>
 		<span class="tooltiptext">Set how many minutes to visualised in the History Charts.</span>
 		<input class="input-minutes" type="number" id="points" value="1" min="1" max="100000">
-		<button class="button" onclick="changePoints()">Set</button>
+	</div>
+	<div class="tooltip">
+		<label for="updateFrequency">Update Frequency (ms):</label>
+		<span class="tooltiptext">Set the update frequency for History Charts in milliseconds. 1 minute = 1000 ms</span>
+		<input class="input-minutes" type="number" id="updateFrequency" value="500" min="500">
+	</div>
+	<div class="tooltip">
+		<button class="button" onclick="changePoints()">Change</button>
 	</div>
 	<div class="wrapper">
 		<div class='container'>
@@ -284,6 +309,9 @@
 	<script src='/chart.js'></script>
 	<script>
 		var maxDataPoints = 30 * 2; // *2 because we need to convert points to a second. Default value 30 equivalent to 30 seconds
+		var updateFrequency = 500; // Default update frequency in milliseconds
+		var updateInterval; // Variable to hold the interval ID
+
 		var voltageHistory = [];
 		var currentHistory = [];
 		var powerHistory = [];
@@ -450,8 +478,13 @@
 					}
 				}
 			});
-			setInterval(() => {
-				fetch('/data').then(response => response.json()).then(data => {
+			startFetchingData(); // Start fetching data with the default update frequency
+		};
+
+		function fetchDataAndUpdateCharts() {
+			fetch('/data')
+				.then(response => response.json())
+				.then(data => {
 					const voltageElements = document.getElementsByClassName('voltageDisplay');
 					const currentElements = document.getElementsByClassName('currentDisplay');
 					const powerElements = document.getElementsByClassName('powerDisplay');
@@ -492,8 +525,22 @@
 					combinedChart2.data.datasets[2].data = powerHistory;
 					combinedChart2.update();
 				});
-			}, 500); //Update period is half of a second
-		};
+		}
+
+		function startFetchingData() {
+			clearInterval(updateInterval); // Clear any existing interval
+			updateInterval = setInterval(fetchDataAndUpdateCharts, updateFrequency);
+		}
+
+		function changeUpdateFrequency() {
+			var frequency = parseInt(document.getElementById('updateFrequency').value);
+			if (isNaN(frequency) || frequency < 500) {
+				alert("Please enter a valid positive number more then 500ms.");
+				return;
+			}
+			updateFrequency = frequency;
+			startFetchingData(); // Restart the interval with the new frequency
+		}
 
 		function getFormattedDateTime() {
 			var currentDate = new Date();
@@ -598,12 +645,14 @@
 		}
 
 		function changePoints() {
+
+			changeUpdateFrequency();
 			var points = parseInt(document.getElementById('points').value);
 			if (isNaN(points) || points <= 0) {
 				alert("Please enter a valid positive number.");
 				return;
 			}
-			maxDataPoints = points * 2 * 60; // *2 because we need to convert points to a second *60 because we need to convert points to minutes.
+			maxDataPoints = points * (1000 / updateFrequency) * 60; // Adjust for new update frequency
 			// Update the number of points for the charts
 			while (voltageHistory.length > points) voltageHistory.shift();
 			while (currentHistory.length > points) currentHistory.shift();
