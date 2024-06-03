@@ -6,113 +6,113 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>WiFi Configuration</title>
 	<style>
-	body {
-		background-color: black;
-		color: #e88504;
-		font-family: monospace;
-		text-align: center;
-		padding: 20px;
-		margin: 0;
-		/* Remove default margin */
-	}
-
-	h1 {
-		color: #e88504;
-		margin-top: 2rem;
-	}
-
-	p {
-		color: white;
-	}
-
-	label {
-		color: white;
-	}
-
-	input {
-		background-color: black;
-		color: white;
-		border: 1px solid #e88504;
-		padding: 5px;
-		border-radius: 3px;
-		margin: 0.7rem -15px;
-		width: calc(100% - 10px);
-		/* Take up 100% width minus padding */
-	}
-
-	input[type="submit"] {
-		border: 1px solid #e88504;
-		color: white;
-		padding: 10px 20px;
-		border-radius: 5px;
-		cursor: pointer;
-		margin: 0.7rem 0;
-		width: calc(100% - 10px);
-		/* Take up 100% width minus padding */
-	}
-
-	input[type="submit"]:hover {
-		background-color: #e88504;
-	}
-
-	.container {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-gap: 20px;
-		padding: 20px;
-		margin: 0 auto;
-		/* Center align container */
-		max-width: 300px;
-		/* Limit container width */
-	}
-
-	.network-settings,
-	.additional-settings {
-		border: 1px solid #e88504;
-		padding: 20px;
-		border-radius: 1rem;
-	}
-
-	.menu {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.menu li {
-		display: inline;
-		margin: 0 10px;
-	}
-
-	.menu li a {
-		color: white;
-		text-decoration: none;
-		border: 1px solid #e88504;
-		padding: 5px 10px;
-		border-radius: 5px;
-	}
-
-	.menu li a:hover {
-		background-color: #e88504;
-		color: white;
-	}
-
-	/* Media Query for screens smaller than 600px */
-	@media (max-width: 600px) {
-		.container {
-			padding: 10px;
-			/* Reduce padding for smaller screens */
+		body {
+			background-color: black;
+			color: #e88504;
+			font-family: monospace;
+			text-align: center;
+			padding: 20px;
+			margin: 0;
+			/* Remove default margin */
 		}
 
-		input,
+		h1 {
+			color: #e88504;
+			margin-top: 2rem;
+		}
+
+		p {
+			color: white;
+		}
+
+		label {
+			color: white;
+		}
+
+		input {
+			background-color: black;
+			color: white;
+			border: 1px solid #e88504;
+			padding: 5px;
+			border-radius: 3px;
+			margin: 0.7rem -15px;
+			width: calc(100% - 10px);
+			/* Take up 100% width minus padding */
+		}
+
 		input[type="submit"] {
-			width: 100%;
-			/* Make inputs and submit button full width */
+			border: 1px solid #e88504;
+			color: white;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin: 0.7rem 0;
+			width: calc(100% - 10px);
+			/* Take up 100% width minus padding */
 		}
-	}
+
+		input[type="submit"]:hover {
+			background-color: #e88504;
+		}
+
+		.container {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-gap: 20px;
+			padding: 20px;
+			margin: 0 auto;
+			/* Center align container */
+			max-width: 300px;
+			/* Limit container width */
+		}
+
+		.network-settings,
+		.additional-settings {
+			border: 1px solid #e88504;
+			padding: 20px;
+			border-radius: 1rem;
+		}
+
+		.menu {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.menu li {
+			display: inline;
+			margin: 0 10px;
+		}
+
+		.menu li a {
+			color: white;
+			text-decoration: none;
+			border: 1px solid #e88504;
+			padding: 5px 10px;
+			border-radius: 5px;
+		}
+
+		.menu li a:hover {
+			background-color: #e88504;
+			color: white;
+		}
+
+		/* Media Query for screens smaller than 600px */
+		@media (max-width: 600px) {
+			.container {
+				padding: 10px;
+				/* Reduce padding for smaller screens */
+			}
+
+			input,
+			input[type="submit"] {
+				width: 100%;
+				/* Make inputs and submit button full width */
+			}
+		}
 	</style>
 </head>
 
@@ -151,12 +151,12 @@
 		</form>
 	</div>
 	<script>
-	let SSID = "$CONNECTED_SSID$";
-	let PASS = "$CONNECTED_PASS$";
-	if(SSID != "$" + "CONNECTED_SSID" + "$") {
-		document.getElementById('ssid').value = SSID;
-	}
-	document.getElementById('password').value = PASS;
+		let SSID = "$CONNECTED_SSID$";
+		let PASS = "$CONNECTED_PASS$";
+		if (SSID != "$" + "CONNECTED_SSID" + "$") {
+			document.getElementById('ssid').value = SSID;
+		}
+		document.getElementById('password').value = PASS;
 	</script>
 </body>
 

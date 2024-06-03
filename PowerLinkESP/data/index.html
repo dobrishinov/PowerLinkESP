@@ -5,206 +5,206 @@
 	<title>Voltage and Current Monitor</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<style>
-	body {
-		background-color: black;
-		color: #e88504;
-		font-family: monospace;
-	}
+		body {
+			background-color: black;
+			color: #e88504;
+			font-family: monospace;
+		}
 
-	h1 {
-		color: #e88504;
-		margin: 2rem;
-	}
+		h1 {
+			color: #e88504;
+			margin: 2rem;
+		}
 
-	.container {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		grid-gap: 20px;
-		padding: 20px;
-	}
-
-	canvas {
-		max-width: 100%;
-		height: auto;
-	}
-
-	.menu {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.menu li {
-		display: inline;
-		margin: 0 10px;
-	}
-
-	.menu li a {
-		color: white;
-		text-decoration: none;
-		border: 1px solid #e88504;
-		padding: 5px 10px;
-		border-radius: 5px;
-	}
-
-	.menu li a:hover {
-		background-color: #e88504;
-		color: white;
-	}
-
-	.chart-box {
-		text-align: center;
-		padding: 20px;
-		border: 3px solid #e88504;
-		border-radius: 1rem;
-		color: #e88504;
-		background: white;
-	}
-
-	#top-dashboard {
-		text-align: center;
-		padding: 35px 0 0 0;
-	}
-
-	#voltageChart,
-	#currentChart,
-	#combinedChart,
-	#powerChart,
-	#combinedChart2 {
-		background-color: white;
-		border-radius: 1rem;
-	}
-
-	.dash-panel {
-		border: 2px solid #e88504;
-		margin: 0.5rem;
-		border-radius: 1rem;
-		background-color: #382e26;
-	}
-
-	.tooltip {
-		position: relative;
-		border-bottom: 1px dotted black;
-		text-align: center;
-	}
-
-	.tooltip .tooltiptext {
-		visibility: hidden;
-		width: 120px;
-		background-color: #e88504;
-		color: #fff;
-		text-align: center;
-		border-radius: 6px;
-		padding: 8px 0;
-		position: absolute;
-		z-index: 1;
-		bottom: 100%;
-		left: 50%;
-		margin-left: -60px;
-	}
-
-	.tooltip .tooltiptext::after {
-		content: "";
-		position: absolute;
-		top: 100%;
-		left: 50%;
-		margin-left: -5px;
-		border-width: 5px;
-		border-style: solid;
-		border-color: #e88504 transparent transparent transparent;
-	}
-
-	.tooltip:hover .tooltiptext {
-		visibility: visible;
-	}
-
-	.input-minutes {
-		margin: 10px;
-		padding: 5px;
-		border-radius: 5px;
-		border: 2px solid #e88504;
-	}
-
-	.button {
-		background-color: black;
-		color: white;
-		text-decoration: none;
-		border: 1px solid #e88504;
-		padding: 5px 10px;
-		border-radius: 5px;
-		cursor: pointer;
-	}
-
-	.button:hover {
-		background-color: #e88504;
-		color: white;
-	}
-
-	.button:active {
-		background-color: #ec9006;
-		box-shadow: 0 1px #ec9006;
-		transform: translateY(1px);
-	}
-
-	.wrapper {
-		min-height: 100%;
-		height: calc(100vh + 10rem);
-		position: relative;
-		padding-top: 24px;
-		text-align: center;
-	}
-
-	#bottom-bar {
-		width: 70%;
-		background-color: #382e26;
-		position: fixed;
-		bottom: 0;
-		margin: 0px 12%;
-		border-top-left-radius: 1rem;
-		border-top-right-radius: 1rem;
-		border-top: 2px solid #e88504;
-		border-right: 2px solid #e88504;
-		border-left: 2px solid #e88504;
-		visibility: hidden;
-		/* Initially hidden */
-		opacity: 0;
-		transition: visibility 1s, opacity 0.5s linear;
-	}
-
-	.bottom-bar-element {
-		width: 33%;
-		display: inline-block;
-		float: left;
-		text-align: center;
-		padding-top: 16px;
-		padding-bottom: 16px;
-		color: white;
-		transition: all 0.5s cubic-bezier(.25, .8, .25, 1);
-		font-size: large;
-	}
-
-	@media screen and (max-width: 1020px) {
 		.container {
-			grid-template-columns: 1fr;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-gap: 20px;
+			padding: 20px;
+		}
+
+		canvas {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.menu {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.menu li {
+			display: inline;
+			margin: 0 10px;
+		}
+
+		.menu li a {
+			color: white;
+			text-decoration: none;
+			border: 1px solid #e88504;
+			padding: 5px 10px;
+			border-radius: 5px;
+		}
+
+		.menu li a:hover {
+			background-color: #e88504;
+			color: white;
+		}
+
+		.chart-box {
+			text-align: center;
+			padding: 20px;
+			border: 3px solid #e88504;
+			border-radius: 1rem;
+			color: #e88504;
+			background: white;
+		}
+
+		#top-dashboard {
+			text-align: center;
+			padding: 35px 0 0 0;
+		}
+
+		#voltageChart,
+		#currentChart,
+		#combinedChart,
+		#powerChart,
+		#combinedChart2 {
+			background-color: white;
+			border-radius: 1rem;
+		}
+
+		.dash-panel {
+			border: 2px solid #e88504;
+			margin: 0.5rem;
+			border-radius: 1rem;
+			background-color: #382e26;
+		}
+
+		.tooltip {
+			position: relative;
+			border-bottom: 1px dotted black;
+			text-align: center;
+		}
+
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 120px;
+			background-color: #e88504;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 8px 0;
+			position: absolute;
+			z-index: 1;
+			bottom: 100%;
+			left: 50%;
+			margin-left: -60px;
+		}
+
+		.tooltip .tooltiptext::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: #e88504 transparent transparent transparent;
+		}
+
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+		}
+
+		.input-minutes {
+			margin: 10px;
+			padding: 5px;
+			border-radius: 5px;
+			border: 2px solid #e88504;
+		}
+
+		.button {
+			background-color: black;
+			color: white;
+			text-decoration: none;
+			border: 1px solid #e88504;
+			padding: 5px 10px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.button:hover {
+			background-color: #e88504;
+			color: white;
+		}
+
+		.button:active {
+			background-color: #ec9006;
+			box-shadow: 0 1px #ec9006;
+			transform: translateY(1px);
 		}
 
 		.wrapper {
-			height: calc(100vh + 132rem);
-		}
-	}
-
-	@media screen and (max-width: 600px) {
-		.container {
-			grid-template-columns: 1fr;
+			min-height: 100%;
+			height: calc(100vh + 10rem);
+			position: relative;
+			padding-top: 24px;
+			text-align: center;
 		}
 
-		.wrapper {
-			height: calc(100vh + 60rem);
+		#bottom-bar {
+			width: 70%;
+			background-color: #382e26;
+			position: fixed;
+			bottom: 0;
+			margin: 0px 12%;
+			border-top-left-radius: 1rem;
+			border-top-right-radius: 1rem;
+			border-top: 2px solid #e88504;
+			border-right: 2px solid #e88504;
+			border-left: 2px solid #e88504;
+			visibility: hidden;
+			/* Initially hidden */
+			opacity: 0;
+			transition: visibility 1s, opacity 0.5s linear;
 		}
-	}
+
+		.bottom-bar-element {
+			width: 33%;
+			display: inline-block;
+			float: left;
+			text-align: center;
+			padding-top: 16px;
+			padding-bottom: 16px;
+			color: white;
+			transition: all 0.5s cubic-bezier(.25, .8, .25, 1);
+			font-size: large;
+		}
+
+		@media screen and (max-width: 1020px) {
+			.container {
+				grid-template-columns: 1fr;
+			}
+
+			.wrapper {
+				height: calc(100vh + 132rem);
+			}
+		}
+
+		@media screen and (max-width: 600px) {
+			.container {
+				grid-template-columns: 1fr;
+			}
+
+			.wrapper {
+				height: calc(100vh + 60rem);
+			}
+		}
 	</style>
 </head>
 
@@ -269,381 +269,384 @@
 		<div id="bottom-bar">
 			<div class="bottom-bar-element">
 				<i class="bottom-bar-info">Voltage</i><br>
-				<span class='voltageDisplay' style='color: #e88504;'></span> V </div>
+				<span class='voltageDisplay' style='color: #e88504;'></span> V
+			</div>
 			<div class="bottom-bar-element">
 				<i class="bottom-bar-info">Current</i><br>
-				<span class='currentDisplay' style='color: #e88504;'></span> A </div>
+				<span class='currentDisplay' style='color: #e88504;'></span> A
+			</div>
 			<div class="bottom-bar-element">
 				<i class="bottom-bar-info">Power</i><br>
-				<span class='powerDisplay' style='color: #e88504;'></span> W </div>
+				<span class='powerDisplay' style='color: #e88504;'></span> W
+			</div>
 		</div>
 	</div>
 	<script src='/chart.js'></script>
 	<script>
-	var maxDataPoints = 30 * 2; // *2 because we need to convert points to a second. Default value 30 equivalent to 30 seconds
-	var voltageHistory = [];
-	var currentHistory = [];
-	var powerHistory = [];
-	var voltageChart, currentChart, combinedChart, powerChart, combinedChart2;
-	window.onload = function() {
-		voltageChart = new Chart(document.getElementById('voltageChart').getContext('2d'), {
-			type: 'line',
-			data: {
-				labels: [],
-				datasets: [{
-					label: 'V',
-					data: [],
-					borderColor: 'red',
-					backgroundColor: 'red',
-					borderWidth: 3,
-					fill: false
-				}]
-			},
-			options: {
-				animation: false,
-				pointRadius: 2,
-				pointHoverRadius: 5,
-				scales: {
-					y: {
-						display: true,
-						//title: {
+		var maxDataPoints = 30 * 2; // *2 because we need to convert points to a second. Default value 30 equivalent to 30 seconds
+		var voltageHistory = [];
+		var currentHistory = [];
+		var powerHistory = [];
+		var voltageChart, currentChart, combinedChart, powerChart, combinedChart2;
+		window.onload = function () {
+			voltageChart = new Chart(document.getElementById('voltageChart').getContext('2d'), {
+				type: 'line',
+				data: {
+					labels: [],
+					datasets: [{
+						label: 'V',
+						data: [],
+						borderColor: 'red',
+						backgroundColor: 'red',
+						borderWidth: 3,
+						fill: false
+					}]
+				},
+				options: {
+					animation: false,
+					pointRadius: 2,
+					pointHoverRadius: 5,
+					scales: {
+						y: {
+							display: true,
+							//title: {
 							//display: true,
 							//text: 'Voltage'
-						//}
+							//}
+						}
 					}
 				}
-			}
-		});
-		currentChart = new Chart(document.getElementById('currentChart').getContext('2d'), {
-			type: 'line',
-			data: {
-				labels: [],
-				datasets: [{
-					label: 'A',
-					data: [],
-					borderColor: 'blue',
-					backgroundColor: 'blue',
-					borderWidth: 3,
-					fill: false
-				}]
-			},
-			options: {
-				animation: false,
-				pointRadius: 2,
-				pointHoverRadius: 5,
-				scales: {
-					y: {
-						display: true,
-						//title: {
+			});
+			currentChart = new Chart(document.getElementById('currentChart').getContext('2d'), {
+				type: 'line',
+				data: {
+					labels: [],
+					datasets: [{
+						label: 'A',
+						data: [],
+						borderColor: 'blue',
+						backgroundColor: 'blue',
+						borderWidth: 3,
+						fill: false
+					}]
+				},
+				options: {
+					animation: false,
+					pointRadius: 2,
+					pointHoverRadius: 5,
+					scales: {
+						y: {
+							display: true,
+							//title: {
 							//display: true,
 							//text: 'Current'
-						//}
+							//}
+						}
 					}
 				}
-			}
-		});
-		powerChart = new Chart(document.getElementById('powerChart').getContext('2d'), {
-			type: 'line',
-			data: {
-				labels: [],
-				datasets: [{
-					label: 'W',
-					data: [],
-					borderColor: 'green',
-					backgroundColor: 'green',
-					borderWidth: 3,
-					fill: false
-				}]
-			},
-			options: {
-				animation: false,
-				pointRadius: 2,
-				pointHoverRadius: 5,
-				scales: {
-					y: {
-						display: true,
-						//title: {
+			});
+			powerChart = new Chart(document.getElementById('powerChart').getContext('2d'), {
+				type: 'line',
+				data: {
+					labels: [],
+					datasets: [{
+						label: 'W',
+						data: [],
+						borderColor: 'green',
+						backgroundColor: 'green',
+						borderWidth: 3,
+						fill: false
+					}]
+				},
+				options: {
+					animation: false,
+					pointRadius: 2,
+					pointHoverRadius: 5,
+					scales: {
+						y: {
+							display: true,
+							//title: {
 							//display: true,
 							//text: 'Watts'
-						//}
+							//}
+						}
 					}
 				}
-			}
-		});
-		combinedChart = new Chart(document.getElementById('combinedChart').getContext('2d'), {
-			type: 'line',
-			data: {
-				labels: [],
-				datasets: [{
-					label: 'V',
-					data: [],
-					borderColor: 'red',
-					backgroundColor: 'red',
-					borderWidth: 3,
-					fill: false
-				}, {
-					label: 'A',
-					data: [],
-					borderColor: 'blue',
-					backgroundColor: 'blue',
-					borderWidth: 3,
-					fill: false
-				}]
-			},
-			options: {
-				animation: false,
-				pointRadius: 2,
-				pointHoverRadius: 5,
-				scales: {
-					y: {
-						display: true,
-						//title: {
+			});
+			combinedChart = new Chart(document.getElementById('combinedChart').getContext('2d'), {
+				type: 'line',
+				data: {
+					labels: [],
+					datasets: [{
+						label: 'V',
+						data: [],
+						borderColor: 'red',
+						backgroundColor: 'red',
+						borderWidth: 3,
+						fill: false
+					}, {
+						label: 'A',
+						data: [],
+						borderColor: 'blue',
+						backgroundColor: 'blue',
+						borderWidth: 3,
+						fill: false
+					}]
+				},
+				options: {
+					animation: false,
+					pointRadius: 2,
+					pointHoverRadius: 5,
+					scales: {
+						y: {
+							display: true,
+							//title: {
 							//display: true,
 							//text: 'Voltage, Current'
-						//}
+							//}
+						}
 					}
 				}
-			}
-		});
-		combinedChart2 = new Chart(document.getElementById('combinedChart2').getContext('2d'), {
-			type: 'line',
-			data: {
-				labels: [],
-				datasets: [{
-					label: 'V',
-					data: [],
-					borderColor: 'red',
-					backgroundColor: 'red',
-					borderWidth: 3,
-					fill: false
-				}, {
-					label: 'A',
-					data: [],
-					borderColor: 'blue',
-					backgroundColor: 'blue',
-					borderWidth: 3,
-					fill: false
-				}, {
-					label: 'W',
-					data: [],
-					borderColor: 'green',
-					backgroundColor: 'green',
-					borderWidth: 3,
-					fill: false
-				}]
-			},
-			options: {
-				animation: false,
-				pointRadius: 2,
-				pointHoverRadius: 5,
-				scales: {
-					y: {
-						display: true,
-						//title: {
+			});
+			combinedChart2 = new Chart(document.getElementById('combinedChart2').getContext('2d'), {
+				type: 'line',
+				data: {
+					labels: [],
+					datasets: [{
+						label: 'V',
+						data: [],
+						borderColor: 'red',
+						backgroundColor: 'red',
+						borderWidth: 3,
+						fill: false
+					}, {
+						label: 'A',
+						data: [],
+						borderColor: 'blue',
+						backgroundColor: 'blue',
+						borderWidth: 3,
+						fill: false
+					}, {
+						label: 'W',
+						data: [],
+						borderColor: 'green',
+						backgroundColor: 'green',
+						borderWidth: 3,
+						fill: false
+					}]
+				},
+				options: {
+					animation: false,
+					pointRadius: 2,
+					pointHoverRadius: 5,
+					scales: {
+						y: {
+							display: true,
+							//title: {
 							//display: true,
 							//text: 'Voltage, Current, Watts'
-						//}
+							//}
+						}
 					}
 				}
-			}
-		});
-		setInterval(() => {
-			fetch('/data').then(response => response.json()).then(data => {
-				const voltageElements = document.getElementsByClassName('voltageDisplay');
-				const currentElements = document.getElementsByClassName('currentDisplay');
-				const powerElements = document.getElementsByClassName('powerDisplay');
-				// Update text content for voltage elements
-				for(const element of voltageElements) {
-					element.textContent = data.voltage.toFixed(2);
-				}
-				// Update text content for current elements
-				for(const element of currentElements) {
-					element.textContent = data.current.toFixed(3);
-				}
-				// Update text content for power elements
-				for(const element of powerElements) {
-					element.textContent = data.power.toFixed(3);
-				}
-				voltageHistory.push(data.voltage.toFixed(2));
-				currentHistory.push(data.current);
-				powerHistory.push(data.power);
-				if(voltageHistory.length > maxDataPoints) voltageHistory.shift();
-				if(currentHistory.length > maxDataPoints) currentHistory.shift();
-				if(powerHistory.length > maxDataPoints) powerHistory.shift();
-				voltageChart.data.labels = [...Array(voltageHistory.length).keys()];
-				voltageChart.data.datasets[0].data = voltageHistory;
-				voltageChart.update();
-				currentChart.data.labels = [...Array(currentHistory.length).keys()];
-				currentChart.data.datasets[0].data = currentHistory;
-				currentChart.update();
-				combinedChart.data.labels = [...Array(Math.max(voltageHistory.length, currentHistory.length)).keys()];
-				combinedChart.data.datasets[0].data = voltageHistory;
-				combinedChart.data.datasets[1].data = currentHistory;
-				combinedChart.update();
-				powerChart.data.labels = [...Array(powerHistory.length).keys()];
-				powerChart.data.datasets[0].data = powerHistory;
-				powerChart.update();
-				combinedChart2.data.labels = [...Array(Math.max(voltageHistory.length, currentHistory.length, powerHistory.length)).keys()];
-				combinedChart2.data.datasets[0].data = voltageHistory;
-				combinedChart2.data.datasets[1].data = currentHistory;
-				combinedChart2.data.datasets[2].data = powerHistory;
-				combinedChart2.update();
 			});
-		}, 500); //Update period is half of a second
-	};
-	
-	function getFormattedDateTime(){
-		var currentDate = new Date();
-		var day = currentDate.getDate();
-		var month = currentDate.getMonth() + 1; // January is 0
-		var year = currentDate.getFullYear();
-		var hours = currentDate.getHours();
-		var minutes = currentDate.getMinutes();
-		var seconds = currentDate.getSeconds();
-		
-		// Formatting with leading zeros if necessary and the desired order
-		var formattedDateTime = [
-			day < 10 ? '0' + day : day,
-			month < 10 ? '0' + month : month,
-			year,
-			hours < 10 ? '0' + hours : hours,
-			minutes < 10 ? '0' + minutes : minutes,
-			seconds < 10 ? '0' + seconds : seconds
-		].join('_');
-		
-		return formattedDateTime;
-	}
-	
-	function exportPNGChart(chartId) {
-		var chartCanvas = document.getElementById(chartId);
-		var dataURL = chartCanvas.toDataURL('image/png');
-		var fileName = chartId + '_' + getFormattedDateTime() + '.png';
-		var link = document.createElement('a');
-		link.href = dataURL;
-		link.download = fileName;
-		link.click();
-	}
+			setInterval(() => {
+				fetch('/data').then(response => response.json()).then(data => {
+					const voltageElements = document.getElementsByClassName('voltageDisplay');
+					const currentElements = document.getElementsByClassName('currentDisplay');
+					const powerElements = document.getElementsByClassName('powerDisplay');
+					// Update text content for voltage elements
+					for (const element of voltageElements) {
+						element.textContent = data.voltage.toFixed(2);
+					}
+					// Update text content for current elements
+					for (const element of currentElements) {
+						element.textContent = data.current.toFixed(3);
+					}
+					// Update text content for power elements
+					for (const element of powerElements) {
+						element.textContent = data.power.toFixed(3);
+					}
+					voltageHistory.push(data.voltage.toFixed(2));
+					currentHistory.push(data.current);
+					powerHistory.push(data.power);
+					if (voltageHistory.length > maxDataPoints) voltageHistory.shift();
+					if (currentHistory.length > maxDataPoints) currentHistory.shift();
+					if (powerHistory.length > maxDataPoints) powerHistory.shift();
+					voltageChart.data.labels = [...Array(voltageHistory.length).keys()];
+					voltageChart.data.datasets[0].data = voltageHistory;
+					voltageChart.update();
+					currentChart.data.labels = [...Array(currentHistory.length).keys()];
+					currentChart.data.datasets[0].data = currentHistory;
+					currentChart.update();
+					combinedChart.data.labels = [...Array(Math.max(voltageHistory.length, currentHistory.length)).keys()];
+					combinedChart.data.datasets[0].data = voltageHistory;
+					combinedChart.data.datasets[1].data = currentHistory;
+					combinedChart.update();
+					powerChart.data.labels = [...Array(powerHistory.length).keys()];
+					powerChart.data.datasets[0].data = powerHistory;
+					powerChart.update();
+					combinedChart2.data.labels = [...Array(Math.max(voltageHistory.length, currentHistory.length, powerHistory.length)).keys()];
+					combinedChart2.data.datasets[0].data = voltageHistory;
+					combinedChart2.data.datasets[1].data = currentHistory;
+					combinedChart2.data.datasets[2].data = powerHistory;
+					combinedChart2.update();
+				});
+			}, 500); //Update period is half of a second
+		};
 
-	function exportCSVChart(chartId) {
-		// Get the Chart.js instance
-		var chartInstance = Chart.getChart(chartId);
-		// Extract data from the chart instance
-		var chartData = chartInstance.data;
-		// Extract labels and datasets from the chart data
-		var labels = chartData.labels;
-		var datasets = chartData.datasets;
-		// Prepare CSV content
-		var csvContent = "data:text/csv;charset=utf-8,";
-		// Add headers for Point and selected data based on chartId
-		csvContent += "Point,";
-		var includeVoltage = false;
-		var includeCurrent = false;
-		var includePower = false;
+		function getFormattedDateTime() {
+			var currentDate = new Date();
+			var day = currentDate.getDate();
+			var month = currentDate.getMonth() + 1; // January is 0
+			var year = currentDate.getFullYear();
+			var hours = currentDate.getHours();
+			var minutes = currentDate.getMinutes();
+			var seconds = currentDate.getSeconds();
 
-		if (chartId === "combinedChart" || chartId === "combinedChart2") {
-			datasets.forEach(function(dataset) {
-				if (dataset.label === "V") {
-					csvContent += "Voltage,";
+			// Formatting with leading zeros if necessary and the desired order
+			var formattedDateTime = [
+				day < 10 ? '0' + day : day,
+				month < 10 ? '0' + month : month,
+				year,
+				hours < 10 ? '0' + hours : hours,
+				minutes < 10 ? '0' + minutes : minutes,
+				seconds < 10 ? '0' + seconds : seconds
+			].join('_');
+
+			return formattedDateTime;
+		}
+
+		function exportPNGChart(chartId) {
+			var chartCanvas = document.getElementById(chartId);
+			var dataURL = chartCanvas.toDataURL('image/png');
+			var fileName = chartId + '_' + getFormattedDateTime() + '.png';
+			var link = document.createElement('a');
+			link.href = dataURL;
+			link.download = fileName;
+			link.click();
+		}
+
+		function exportCSVChart(chartId) {
+			// Get the Chart.js instance
+			var chartInstance = Chart.getChart(chartId);
+			// Extract data from the chart instance
+			var chartData = chartInstance.data;
+			// Extract labels and datasets from the chart data
+			var labels = chartData.labels;
+			var datasets = chartData.datasets;
+			// Prepare CSV content
+			var csvContent = "data:text/csv;charset=utf-8,";
+			// Add headers for Point and selected data based on chartId
+			csvContent += "Point,";
+			var includeVoltage = false;
+			var includeCurrent = false;
+			var includePower = false;
+
+			if (chartId === "combinedChart" || chartId === "combinedChart2") {
+				datasets.forEach(function (dataset) {
+					if (dataset.label === "V") {
+						csvContent += "Voltage,";
+						includeVoltage = true;
+					} else if (dataset.label === "A") {
+						csvContent += "Current,";
+						includeCurrent = true;
+					} else if (dataset.label === "W") {
+						csvContent += "Power";
+						includePower = true;
+					}
+				});
+			} else {
+				// Handle individual charts
+				if (chartId === "voltageChart") {
+					csvContent += "Voltage";
 					includeVoltage = true;
-				} else if (dataset.label === "A") {
-					csvContent += "Current,";
+				} else if (chartId === "currentChart") {
+					csvContent += "Current";
 					includeCurrent = true;
-				} else if (dataset.label === "W") {
+				} else if (chartId === "powerChart") {
 					csvContent += "Power";
 					includePower = true;
 				}
-			});
-		} else {
-			// Handle individual charts
-			if (chartId === "voltageChart") {
-				csvContent += "Voltage";
-				includeVoltage = true;
-			} else if (chartId === "currentChart") {
-				csvContent += "Current";
-				includeCurrent = true;
-			} else if (chartId === "powerChart") {
-				csvContent += "Power";
-				includePower = true;
 			}
-		}
-		csvContent += "\n";
+			csvContent += "\n";
 
-		// Add data from datasets to CSV
-		for (var i = 0; i < labels.length; i++) {
-			var row = (i + 1) + ",";
-			if (includeVoltage) {
-				row += datasets.find(dataset => dataset.label === "V").data[i];
-				if (includeCurrent || includePower) row += ",";
+			// Add data from datasets to CSV
+			for (var i = 0; i < labels.length; i++) {
+				var row = (i + 1) + ",";
+				if (includeVoltage) {
+					row += datasets.find(dataset => dataset.label === "V").data[i];
+					if (includeCurrent || includePower) row += ",";
+				}
+				if (includeCurrent) {
+					row += datasets.find(dataset => dataset.label === "A").data[i];
+					if (includePower) row += ",";
+				}
+				if (includePower) {
+					row += datasets.find(dataset => dataset.label === "W").data[i];
+				}
+				csvContent += row + "\n";
 			}
-			if (includeCurrent) {
-				row += datasets.find(dataset => dataset.label === "A").data[i];
-				if (includePower) row += ",";
-			}
-			if (includePower) {
-				row += datasets.find(dataset => dataset.label === "W").data[i];
-			}
-			csvContent += row + "\n";
-		}
-		
-		// Create a download link
-		var encodedUri = encodeURI(csvContent);
-		var link = document.createElement("a");
-		link.setAttribute("href", encodedUri);
-		link.setAttribute("download", chartId + "_data_" + getFormattedDateTime() + ".csv");
-		// Simulate click to trigger download
-		link.click();
-	}
 
-	function changePoints() {
-		var points = parseInt(document.getElementById('points').value);
-		if(isNaN(points) || points <= 0) {
-			alert("Please enter a valid positive number.");
-			return;
+			// Create a download link
+			var encodedUri = encodeURI(csvContent);
+			var link = document.createElement("a");
+			link.setAttribute("href", encodedUri);
+			link.setAttribute("download", chartId + "_data_" + getFormattedDateTime() + ".csv");
+			// Simulate click to trigger download
+			link.click();
 		}
-		maxDataPoints = points * 2 * 60; // *2 because we need to convert points to a second *60 because we need to convert points to minutes.
-		// Update the number of points for the charts
-		while(voltageHistory.length > points) voltageHistory.shift();
-		while(currentHistory.length > points) currentHistory.shift();
-		while(powerHistory.length > points) powerHistory.shift();
-		// Clear the labels and data for each chart
-		voltageChart.data.labels = [...Array(voltageHistory.length).keys()];
-		voltageChart.data.datasets[0].data = voltageHistory;
-		currentChart.data.labels = [...Array(currentHistory.length).keys()];
-		currentChart.data.datasets[0].data = currentHistory;
-		combinedChart.data.labels = [...Array(Math.max(voltageHistory.length, currentHistory.length)).keys()];
-		combinedChart.data.datasets[0].data = voltageHistory;
-		combinedChart.data.datasets[1].data = currentHistory;
-		powerChart.data.labels = [...Array(powerHistory.length).keys()];
-		powerChart.data.datasets[0].data = powerHistory;
-		combinedChart2.data.labels = [...Array(Math.max(voltageHistory.length, currentHistory.length, powerHistory.length)).keys()];
-		combinedChart2.data.datasets[0].data = voltageHistory;
-		combinedChart2.data.datasets[1].data = currentHistory;
-		combinedChart2.data.datasets[2].data = powerHistory;
-		// Update the charts
-		voltageChart.update();
-		currentChart.update();
-		combinedChart.update();
-		powerChart.update();
-		combinedChart2.update();
-	}
-	// Show bottom bar when scrolled down, hide when scrolled up and top-dashboard is visible
-	var lastScrollTop = 0;
-	var bottomBar = document.getElementById('bottom-bar');
-	var topDashboard = document.getElementById('top-dashboard');
-	window.addEventListener('scroll', function() {
-		var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-		var topDashboardRect = topDashboard.getBoundingClientRect();
-		if(currentScroll > lastScrollTop && topDashboardRect.bottom <= 0) {
-			// Scroll down and top dashboard is entirely hidden
-			bottomBar.style.visibility = 'visible';
-			bottomBar.style.opacity = 1;
-		} else if(currentScroll < lastScrollTop && topDashboardRect.bottom > 0) {
-			// Scroll up and top dashboard is visible
-			bottomBar.style.visibility = 'hidden';
-			bottomBar.style.opacity = 0;
+
+		function changePoints() {
+			var points = parseInt(document.getElementById('points').value);
+			if (isNaN(points) || points <= 0) {
+				alert("Please enter a valid positive number.");
+				return;
+			}
+			maxDataPoints = points * 2 * 60; // *2 because we need to convert points to a second *60 because we need to convert points to minutes.
+			// Update the number of points for the charts
+			while (voltageHistory.length > points) voltageHistory.shift();
+			while (currentHistory.length > points) currentHistory.shift();
+			while (powerHistory.length > points) powerHistory.shift();
+			// Clear the labels and data for each chart
+			voltageChart.data.labels = [...Array(voltageHistory.length).keys()];
+			voltageChart.data.datasets[0].data = voltageHistory;
+			currentChart.data.labels = [...Array(currentHistory.length).keys()];
+			currentChart.data.datasets[0].data = currentHistory;
+			combinedChart.data.labels = [...Array(Math.max(voltageHistory.length, currentHistory.length)).keys()];
+			combinedChart.data.datasets[0].data = voltageHistory;
+			combinedChart.data.datasets[1].data = currentHistory;
+			powerChart.data.labels = [...Array(powerHistory.length).keys()];
+			powerChart.data.datasets[0].data = powerHistory;
+			combinedChart2.data.labels = [...Array(Math.max(voltageHistory.length, currentHistory.length, powerHistory.length)).keys()];
+			combinedChart2.data.datasets[0].data = voltageHistory;
+			combinedChart2.data.datasets[1].data = currentHistory;
+			combinedChart2.data.datasets[2].data = powerHistory;
+			// Update the charts
+			voltageChart.update();
+			currentChart.update();
+			combinedChart.update();
+			powerChart.update();
+			combinedChart2.update();
 		}
-		lastScrollTop = currentScroll;
-	});
+		// Show bottom bar when scrolled down, hide when scrolled up and top-dashboard is visible
+		var lastScrollTop = 0;
+		var bottomBar = document.getElementById('bottom-bar');
+		var topDashboard = document.getElementById('top-dashboard');
+		window.addEventListener('scroll', function () {
+			var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+			var topDashboardRect = topDashboard.getBoundingClientRect();
+			if (currentScroll > lastScrollTop && topDashboardRect.bottom <= 0) {
+				// Scroll down and top dashboard is entirely hidden
+				bottomBar.style.visibility = 'visible';
+				bottomBar.style.opacity = 1;
+			} else if (currentScroll < lastScrollTop && topDashboardRect.bottom > 0) {
+				// Scroll up and top dashboard is visible
+				bottomBar.style.visibility = 'hidden';
+				bottomBar.style.opacity = 0;
+			}
+			lastScrollTop = currentScroll;
+		});
 	</script>
 </body>
 

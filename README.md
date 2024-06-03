@@ -92,7 +92,7 @@ When we scrolling the top display with values is hidden, but we have handy pinne
       - Install the IDE by following the instructions for your operating system.
 
    - Install Required Libraries:
-   
+
       - Open Arduino IDE.
       - Go to **Sketch > Include Library > Manage Libraries...**.
       - In the Library Manager, search for and install the following libraries:
