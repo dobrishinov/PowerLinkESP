@@ -18,6 +18,7 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 - **Export Functionality:** Export chart data history in PNG or CSV format for further analysis.
 - **Persistent Information Bar:** Access live information about voltage, current, and power on a persistent bottom bar.
 - **Customizable History Range:** Set the history range in minutes for chart data.
+- **Customizable Update Frequency:** Set the update frequency in milliseconds for chart data.
 
 ### Network Configuration
 
@@ -167,6 +168,22 @@ There is two working modes:
       - Utilize interactive charts and export functionality to analyze historical data.
       - Customize network settings and configuration options as needed.
       - If the WIFI network is not reachable, the device will run automatically in Access Point Mode.
+
+## To-Do / Wishlist
+
+Below is a list of upcoming features and enhancements:
+
+:hourglass_flowing_sand: Update README regularly.
+
+:heavy_check_mark: Add option to set the update frequency for the charts.
+
+:heavy_check_mark: Add favicon with nice power icon.
+
+:rainbow: Add threshold notifications with audible alerts when Voltage, Current, or Power reach specified values..
+
+:star: More Soon...
+
+Feel free to suggest new features or improvements by opening an issue or submitting a pull request. Your contributions are always welcome!
 
 ## Contributing
 
