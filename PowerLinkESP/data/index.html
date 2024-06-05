@@ -17,6 +17,7 @@
 		h1 {
 			color: #e88504;
 			margin: 2rem;
+			font-family: monospace;
 		}
 
 		.container {
@@ -42,7 +43,7 @@
 
 		.menu li {
 			display: inline;
-			margin: 0 10px;
+			margin: 0 0.1rem;
 		}
 
 		.menu li a {
@@ -94,7 +95,6 @@
 			align-items: center;
 			justify-content: center;
 			position: relative;
-			border-bottom: 1px dotted black;
 			text-align: center;
 		}
 
@@ -111,6 +111,8 @@
 			bottom: 100%;
 			left: 50%;
 			margin-left: -60px;
+			border: 1px solid black;
+			font-family: monospace;
 		}
 
 		.tooltip .tooltiptext::after {
@@ -136,6 +138,7 @@
 			border: 2px solid #e88504;
 			flex: 1;
 			max-width: 100px;
+			font-family: monospace;
 		}
 
 		.button {
@@ -159,9 +162,13 @@
 			transform: translateY(1px);
 		}
 
+		.button.chart-config {
+			margin-top: 2rem;
+		}
+
 		.wrapper {
 			min-height: 100%;
-			height: calc(100vh + 10rem);
+			height: calc(100vh + 18rem);
 			position: relative;
 			text-align: center;
 		}
@@ -195,13 +202,207 @@
 			font-size: large;
 		}
 
+		/* Style the tab */
+		.tab {
+			overflow: hidden;
+			margin: 0.5rem;
+			border-radius: 0.8rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* Style the buttons inside the tab */
+		.tab button {
+			background-color: inherit;
+			float: left;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 14px 16px;
+			transition: 0.3s;
+			color: white;
+			border: 2px solid #e88504;
+			background-color: #382e26;
+			border-radius: 0.5rem;
+			margin: 0.3rem;
+			font-family: monospace;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+			background-color: #e88504b3;
+		}
+
+		/* Create an active/current tablink class */
+		.tab button.active {
+			background-color: #e88504;
+		}
+
+		.charts-config-box {
+			border: 2px solid;
+			background-color: #382e26;
+			padding: 20px;
+			border-radius: 10px;
+		}
+
+		/* Style the tab content */
+		.tabcontent.charts-config {
+			padding: 10px;
+			/* width: 50%; */
+			text-align: center;
+			display: flex;
+			justify-content: center;
+		}
+
+		.indicator {
+			display: none;
+			font-weight: bold;
+			position: absolute;
+			border: 2px solid transparent;
+			border-radius: 5px;
+			padding: 5px;
+		}
+
+		.alert {
+			padding: 20px;
+			background-color: #f44336;
+			color: white;
+			opacity: 1;
+			transition: opacity 0.6s;
+			margin: 10px;
+			border-radius: 10px;
+			border: 2px solid #e88504;
+			text-align: center;
+		}
+
+		.alert.voltage {
+			background-color: #f44336;
+			text-shadow: #000 1px 1px 5px;
+		}
+
+		.alert.current {
+			background-color: #1313fb;
+			text-shadow: #000 1px 1px 5px;
+		}
+
+		.alert.power {
+			background-color: #08800f;
+			text-shadow: #000 1px 1px 5px;
+		}
+
+		.closebtn {
+			margin-left: 15px;
+			color: white;
+			font-weight: bold;
+			float: right;
+			font-size: 22px;
+			line-height: 20px;
+			cursor: pointer;
+			transition: 0.3s;
+			margin: -4px;
+		}
+
+		.closebtn:hover {
+			color: black;
+		}
+
+		#alarmsConfig {
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+			max-width: 100%;
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.alarm-section {
+			border: 2px solid;
+			background-color: #382e26;
+			padding: 20px;
+			margin: 10px;
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.alarm-section h2 {
+			margin-top: 0;
+			font-size: 1.5em;
+		}
+
+		.input-group {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 10px;
+			width: 100%;
+		}
+
+		.input-group label {
+			margin-right: 10px;
+			text-align: center;
+		}
+
+		.input-group input[type="number"] {
+			max-width: 100px;
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid #e88504;
+			background-color: black;
+			color: white;
+		}
+
+		.input-group input[type="checkbox"] {
+			margin-left: 10px;
+			appearance: none;
+			width: 20px;
+			height: 20px;
+			min-width: 20px;
+			min-height: 20px;
+			background: #333;
+			border: 2px solid #ffa500;
+			border-radius: 3px;
+			position: relative;
+		}
+
+		.input-group input[type="checkbox"]:checked {
+			background-color: #ffa500;
+		}
+
+		.input-group input[type="checkbox"]:checked::after {
+			content: "";
+			position: absolute;
+			width: 5px;
+			height: 10px;
+			border: 2px solid #222;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+			top: 1px;
+			left: 5px;
+		}
+
 		@media screen and (max-width: 1020px) {
 			.container {
 				grid-template-columns: 1fr;
 			}
 
 			.wrapper {
-				height: calc(100vh + 132rem);
+				height: calc(100vh + 145rem);
+			}
+
+			#alarmsConfig {
+				grid-template-columns: 1fr;
+			}
+
+			.input-group {
+				flex-direction: row;
+				justify-content: center;
+			}
+
+			.input-group label {
+				text-align: center;
 			}
 		}
 
@@ -223,6 +424,24 @@
 				margin: 5px 0;
 				width: 100%;
 			}
+
+			#alarmsConfig {
+				grid-template-columns: 1fr;
+			}
+
+			.input-group {
+				flex-direction: row;
+				justify-content: center;
+			}
+
+			.input-group label {
+				text-align: center;
+				margin-bottom: 0.5rem;
+			}
+
+			.tab button {
+				height: 4rem;
+			}
 		}
 	</style>
 </head>
@@ -230,83 +449,189 @@
 <body>
 	<ul class="menu">
 		<li><a href="/">Dashboard</a></li>
-		<li><a href="/config">Settings</a></li>
+		<li><a href="/config">Network Settings</a></li>
 	</ul>
 	<div id="top-dashboard">
 		<div class="dash-panel">
-			<h1>Voltage: <span class='voltageDisplay'></span> V</h1>
-			<h1>Current: <span class='currentDisplay'></span> A</h1>
-			<h1>Power: <span class='powerDisplay'></span> W</h1>
+			<h1>VOLTAGE: <span class='voltageDisplay'></span> V</h1>
+			<h1>CURRENT: <span class='currentDisplay'></span> A</h1>
+			<h1>POWER: <span class='powerDisplay'></span> W</h1>
 		</div>
 	</div>
-	<div class="tooltip">
-		<label for="points">History Range In Minutes:</label>
-		<span class="tooltiptext">Set how many minutes to visualised in the History Charts.</span>
-		<input class="input-minutes" type="number" id="points" value="1" min="1" max="100000">
+
+	<div id="indicatorVoltage" class="alert voltage" style="display:none; opacity: 0;">
+		<span class="closebtn" onclick="this.parentElement.style.opacity='0'; setTimeout(() => {this.parentElement.style.display='none';		
+		}, 600);">&times;</span>
+		<strong>VOLTAGE ALARM!</strong> Indicates that Voltage Threshold is reached!
 	</div>
-	<div class="tooltip">
-		<label for="updateFrequency">Update Frequency (ms):</label>
-		<span class="tooltiptext">Set the update frequency for History Charts in milliseconds. 1 minute = 1000 ms</span>
-		<input class="input-minutes" type="number" id="updateFrequency" value="500" min="500">
+
+	<div id="indicatorCurrent" class="alert current" style="display:none; opacity: 0;">
+		<span class="closebtn" onclick="this.parentElement.style.opacity='0'; setTimeout(() => {this.parentElement.style.display='none';		
+		}, 600);">&times;</span>
+		<strong>CURRENT ALARM!</strong> Indicates that Current Threshold is reached!
 	</div>
-	<div class="tooltip">
-		<button class="button" onclick="changePoints()">Change</button>
+
+	<div id="indicatorPower" class="alert power" style="display:none; opacity: 0;">
+		<span class="closebtn" onclick="this.parentElement.style.opacity='0'; setTimeout(() => {this.parentElement.style.display='none';		
+		}, 600);">&times;</span>
+		<strong>POWER ALARM!</strong> Indicates that Power Threshold is reached!
 	</div>
-	<div class="wrapper">
-		<div class='container'>
-			<div class='chart-box'>
-				<h2>Voltage History</h2>
-				<canvas id='voltageChart'></canvas>
-				<br>
-				<button class="button" onclick='exportPNGChart("voltageChart")'>Export PNG</button>
-				<button class="button" onclick='exportCSVChart("voltageChart")'>Export CSV</button>
+
+	<div class="tab">
+		<button class="tablinks" onclick="openTab(event, 'ChartDash')" id="defaultOpen">All Charts</button>
+		<button class="tablinks" onclick="openTab(event, 'ChartConfig')">Charts Configuration</button>
+		<button class="tablinks" onclick="openTab(event, 'alarmsConfig')">Alarms</button>
+	</div>
+	<div id="ChartDash" class="tabcontent">
+		<div class="wrapper">
+			<div class='container'>
+				<div class='chart-box'>
+					<h2>Voltage History</h2>
+					<canvas id='voltageChart'></canvas>
+					<br>
+					<button class="button" onclick='exportPNGChart("voltageChart")'>Export PNG</button>
+					<button class="button" onclick='exportCSVChart("voltageChart")'>Export CSV</button>
+				</div>
+				<div class='chart-box'>
+					<h2>Current History</h2>
+					<canvas id='currentChart'></canvas>
+					<br>
+					<button class="button" onclick='exportPNGChart("currentChart")'>Export PNG</button>
+					<button class="button" onclick='exportCSVChart("currentChart")'>Export CSV</button>
+				</div>
+				<div class='chart-box'>
+					<h2>Power History</h2>
+					<canvas id='powerChart'></canvas>
+					<br>
+					<button class="button" onclick='exportPNGChart("powerChart")'>Export PNG</button>
+					<button class="button" onclick='exportCSVChart("powerChart")'>Export CSV</button>
+				</div>
 			</div>
-			<div class='chart-box'>
-				<h2>Current History</h2>
-				<canvas id='currentChart'></canvas>
-				<br>
-				<button class="button" onclick='exportPNGChart("currentChart")'>Export Chart</button>
-				<button class="button" onclick='exportCSVChart("currentChart")'>Export CSV</button>
+			<div class='container'>
+				<div class='chart-box' style="grid-column: span 1;">
+					<h2>Voltage and Current History</h2>
+					<canvas id='combinedChart'></canvas>
+					<br>
+					<button class="button" onclick='exportPNGChart("combinedChart")'>Export PNG</button>
+					<button class="button" onclick='exportCSVChart("combinedChart")'>Export CSV</button>
+				</div>
+				<div class='chart-box' style="grid-column: span 1;">
+					<h2>Voltage, Current and Power History</h2>
+					<canvas id='combinedChart2'></canvas>
+					<br>
+					<button class="button" onclick='exportPNGChart("combinedChart2")'>Export PNG</button>
+					<button class="button" onclick='exportCSVChart("combinedChart2")'>Export CSV</button>
+				</div>
 			</div>
-			<div class='chart-box'>
-				<h2>Power History</h2>
-				<canvas id='powerChart'></canvas>
-				<br>
-				<button class="button" onclick='exportPNGChart("powerChart")'>Export Chart</button>
-				<button class="button" onclick='exportCSVChart("powerChart")'>Export CSV</button>
+			<div id="bottom-bar">
+				<div class="bottom-bar-element">
+					<i class="bottom-bar-info">VOLTAGE</i><br>
+					<span class='voltageDisplay' style='color: #e88504;'></span> V
+				</div>
+				<div class="bottom-bar-element">
+					<i class="bottom-bar-info">CURRENT</i><br>
+					<span class='currentDisplay' style='color: #e88504;'></span> A
+				</div>
+				<div class="bottom-bar-element">
+					<i class="bottom-bar-info">POWER</i><br>
+					<span class='powerDisplay' style='color: #e88504;'></span> W
+				</div>
 			</div>
 		</div>
-		<div class='container'>
-			<div class='chart-box' style="grid-column: span 1;">
-				<h2>Voltage and Current History</h2>
-				<canvas id='combinedChart'></canvas>
-				<br>
-				<button class="button" onclick='exportPNGChart("combinedChart")'>Export Chart</button>
-				<button class="button" onclick='exportCSVChart("combinedChart")'>Export CSV</button>
-			</div>
-			<div class='chart-box' style="grid-column: span 1;">
-				<h2>Voltage, Current and Power History</h2>
-				<canvas id='combinedChart2'></canvas>
-				<br>
-				<button class="button" onclick='exportPNGChart("combinedChart2")'>Export Chart</button>
-				<button class="button" onclick='exportCSVChart("combinedChart2")'>Export CSV</button>
-			</div>
-		</div>
-		<div id="bottom-bar">
-			<div class="bottom-bar-element">
-				<i class="bottom-bar-info">Voltage</i><br>
-				<span class='voltageDisplay' style='color: #e88504;'></span> V
-			</div>
-			<div class="bottom-bar-element">
-				<i class="bottom-bar-info">Current</i><br>
-				<span class='currentDisplay' style='color: #e88504;'></span> A
-			</div>
-			<div class="bottom-bar-element">
-				<i class="bottom-bar-info">Power</i><br>
-				<span class='powerDisplay' style='color: #e88504;'></span> W
+	</div>
+	<div id="ChartConfig" class="tabcontent charts-config">
+		<div class="charts-config-box">
+			<div class="input-group" style="display: block;">
+				<div class="tooltip">
+					<label for="points">History Range (in Minutes):</label>
+					<span class="tooltiptext">Set how many minutes to visualised in the History Charts.</span>
+					<input class="input-minutes" type="number" id="points" value="1" min="1" max="100000">
+				</div>
+				<div class="tooltip">
+					<label for="updateFrequency">Update Frequency (ms):</label>
+					<span class="tooltiptext">Set the update frequency for History Charts in milliseconds. 1 minute =
+						1000
+						ms</span>
+					<input class="input-minutes" type="number" id="updateFrequency" value="500" min="500">
+				</div>
+				<div class="tooltip">
+					<button class="button chart-config" onclick="changePoints()">Save</button>
+				</div>
 			</div>
 		</div>
 	</div>
+	<div id="alarmsConfig" class="tabcontent">
+		<div class="alarm-section">
+			<h2>Voltage Alarm</h2>
+			<div class="input-group">
+				<label for="thresholdVoltage">Voltage Threshold:</label>
+				<input type="number" id="thresholdVoltage" value="3.3" step="0.1">
+			</div>
+			<div class="input-group">
+				<label for="checkMoreVoltage">Beep when <b>Voltage</b> exceeds the threshold:</label>
+				<input type="checkbox" id="checkMoreVoltage">
+			</div>
+			<div class="input-group">
+				<label for="checkLessVoltage">Beep when <b>Voltage</b> falls below the threshold:</label>
+				<input type="checkbox" id="checkLessVoltage">
+			</div>
+			<div class="input-group">
+				<label for="beepCountVoltage">Number of Beeps:</label>
+				<input type="number" id="beepCountVoltage" value="3">
+			</div>
+			<div class="input-group">
+				<label for="activateVoltage">Activate Alarm:</label>
+				<input type="checkbox" id="activateVoltage">
+			</div>
+		</div>
+		<div class="alarm-section">
+			<h2>Current Alarm</h2>
+			<div class="input-group">
+				<label for="thresholdCurrent">Current Threshold:</label>
+				<input type="number" id="thresholdCurrent" value="2.0" step="0.1">
+			</div>
+			<div class="input-group">
+				<label for="checkMoreCurrent">Beep when <b>Current</b> exceeds the threshold:</label>
+				<input type="checkbox" id="checkMoreCurrent">
+			</div>
+			<div class="input-group">
+				<label for="checkLessCurrent">Beep when <b>Current</b> falls below the threshold:</label>
+				<input type="checkbox" id="checkLessCurrent">
+			</div>
+			<div class="input-group">
+				<label for="beepCountCurrent">Number of Beeps:</label>
+				<input type="number" id="beepCountCurrent" value="4">
+			</div>
+			<div class="input-group">
+				<label for="activateCurrent">Activate Alarm:</label>
+				<input type="checkbox" id="activateCurrent">
+			</div>
+		</div>
+		<div class="alarm-section">
+			<h2>Power Alarm</h2>
+			<div class="input-group">
+				<label for="thresholdPower">Power Threshold:</label>
+				<input type="number" id="thresholdPower" value="5.0" step="0.1">
+			</div>
+			<div class="input-group">
+				<label for="checkMorePower">Beep when <b>Power</b> exceeds the threshold:</label>
+				<input type="checkbox" id="checkMorePower">
+			</div>
+			<div class="input-group">
+				<label for="checkLessPower">Beep when <b>Power</b> falls below the threshold:</label>
+				<input type="checkbox" id="checkLessPower">
+			</div>
+			<div class="input-group">
+				<label for="beepCountPower">Number of Beeps:</label>
+				<input type="number" id="beepCountPower" value="5">
+			</div>
+			<div class="input-group">
+				<label for="activatePower">Activate Alarm:</label>
+				<input type="checkbox" id="activatePower">
+			</div>
+		</div>
+	</div>
+
 	<script src='/chart.js'></script>
 	<script>
 		var maxDataPoints = 30 * 2; // *2 because we need to convert points to a second. Default value 30 equivalent to 30 seconds
@@ -317,6 +642,9 @@
 		var currentHistory = [];
 		var powerHistory = [];
 		var voltageChart, currentChart, combinedChart, powerChart, combinedChart2;
+		// Open Default tab
+		openDefaultTab();
+
 		window.onload = function () {
 			voltageChart = new Chart(document.getElementById('voltageChart').getContext('2d'), {
 				type: 'line',
@@ -492,14 +820,20 @@
 					// Update text content for voltage elements
 					for (const element of voltageElements) {
 						element.textContent = data.voltage.toFixed(2);
+						// Set voltage for alarm threshold
+						voltage.value = data.voltage.toFixed(2);
 					}
 					// Update text content for current elements
 					for (const element of currentElements) {
 						element.textContent = data.current.toFixed(3);
+						// Set current for alarm threshold
+						current.value = data.current.toFixed(3);
 					}
 					// Update text content for power elements
 					for (const element of powerElements) {
 						element.textContent = data.power.toFixed(3);
+						// Set power for alarm threshold
+						power.value = data.power.toFixed(3);
 					}
 					voltageHistory.push(data.voltage.toFixed(2));
 					currentHistory.push(data.current);
@@ -678,6 +1012,8 @@
 			combinedChart.update();
 			powerChart.update();
 			combinedChart2.update();
+			// Open Default tab
+			openDefaultTab();
 		}
 		// Show bottom bar when scrolled down, hide when scrolled up and top-dashboard is visible
 		var lastScrollTop = 0;
@@ -697,6 +1033,179 @@
 			}
 			lastScrollTop = currentScroll;
 		});
+
+		function openTab(evt, tabName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(tabName).style.display = "";
+			evt.currentTarget.className += " active";
+		}
+
+		function openDefaultTab() {
+			// Get the element with id="defaultOpen" and click on it
+			document.getElementById("defaultOpen").click();
+		}
+
+		let beeping = false;
+		let beepInterval;
+
+		const beepFlags = {
+			voltage: false,
+			current: false,
+			power: false
+		};
+
+		const observable = (value, callback) => {
+			return {
+				get value() {
+					return value;
+				},
+				set value(newValue) {
+					value = newValue;
+					callback(newValue);
+				}
+			};
+		};
+
+		let voltage = observable(0, (newValue) => {
+			checkValues(
+				document.getElementById('thresholdVoltage'),
+				newValue,
+				document.getElementById('activateVoltage'),
+				document.getElementById('checkMoreVoltage'),
+				document.getElementById('checkLessVoltage'),
+				document.getElementById('beepCountVoltage'),
+				'indicatorVoltage',
+				'voltage'
+			);
+		});
+
+		let current = observable(0, (newValue) => {
+			checkValues(
+				document.getElementById('thresholdCurrent'),
+				newValue,
+				document.getElementById('activateCurrent'),
+				document.getElementById('checkMoreCurrent'),
+				document.getElementById('checkLessCurrent'),
+				document.getElementById('beepCountCurrent'),
+				'indicatorCurrent',
+				'current'
+			);
+		});
+
+		let power = observable(0, (newValue) => {
+			checkValues(
+				document.getElementById('thresholdPower'),
+				newValue,
+				document.getElementById('activatePower'),
+				document.getElementById('checkMorePower'),
+				document.getElementById('checkLessPower'),
+				document.getElementById('beepCountPower'),
+				'indicatorPower',
+				'power'
+			);
+		});
+
+		function checkValues(threshold, value, activateCheckbox, checkMoreCheckbox, checkLessCheckbox, beepCountInput, indicator, type) {
+			if (beeping) return;
+
+			const thresholdValue = parseFloat(threshold.value);
+			const activate = activateCheckbox.checked;
+			const checkMore = checkMoreCheckbox.checked;
+			const checkLess = checkLessCheckbox.checked;
+			const beepCount = parseInt(beepCountInput.value, 10);
+
+			if (activate && ((checkMore && value > thresholdValue && !beepFlags[type]) || (checkLess && value < thresholdValue && !beepFlags[type]))) {
+				beepFlags[type] = true;
+				startBeeping(value, thresholdValue, beepCount, indicator);
+			} else if (activate && !((checkMore && value > thresholdValue) || (checkLess && value < thresholdValue))) {
+				beepFlags[type] = false;
+			}
+		}
+
+		function beep() {
+			var sound = new Audio("data:audio/wav;base64,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qJrx4KOQjahZxWbcZgztj2c49nKmkId44S71j0c8eV9yDK6uPRzx5X18eDvjvQ6yKo9ZSS6l//8elePK/Lf//IInrOF/FvDoADYAGBMGb7FtErm5MXMlmPAJQVgWta7Zx2go+8xJ0UiCb8LHHdftWyLJE0QIAIsI+UbXu67dZMjmgDGCGl1H+vpF4NSDckSIkk7Vd+sxEhBQMRU8j/12UIRhzSaUdQ+rQU5kGeFxm+hb1oh6pWWmv3uvmReDl0UnvtapVaIzo1jZbf/pD6ElLqSX+rUmOQNpJFa/r+sa4e/pBlAABoAAAAA3CUgShLdGIxsY7AUABPRrgCABdDuQ5GC7DqPQCgbbJUAoRSUj+NIEig0YfyWUho1VBBBA//uQZB4ABZx5zfMakeAAAAmwAAAAF5F3P0w9GtAAACfAAAAAwLhMDmAYWMgVEG1U0FIGCBgXBXAtfMH10000EEEEEECUBYln03TTTdNBDZopopYvrTTdNa325mImNg3TTPV9q3pmY0xoO6bv3r00y+IDGid/9aaaZTGMuj9mpu9Mpio1dXrr5HERTZSmqU36A3CumzN/9Robv/Xx4v9ijkSRSNLQhAWumap82WRSBUqXStV/YcS+XVLnSS+WLDroqArFkMEsAS+eWmrUzrO0oEmE40RlMZ5+ODIkAyKAGUwZ3mVKmcamcJnMW26MRPgUw6j+LkhyHGVGYjSUUKNpuJUQoOIAyDvEyG8S5yfK6dhZc0Tx1KI/gviKL6qvvFs1+bWtaz58uUNnryq6kt5RzOCkPWlVqVX2a/EEBUdU1KrXLf40GoiiFXK///qpoiDXrOgqDR38JB0bw7SoL+ZB9o1RCkQjQ2CBYZKd/+VJxZRRZlqSkKiws0WFxUyCwsKiMy7hUVFhIaCrNQsKkTIsLivwKKigsj8XYlwt/WKi2N4d//uQRCSAAjURNIHpMZBGYiaQPSYyAAABLAAAAAAAACWAAAAApUF/Mg+0aohSIRobBAsMlO//Kk4soosy1JSFRYWaLC4qZBYWFRGZdwqKiwkNBVmoWFSJkWFxX4FFRQWR+LsS4W/rFRb/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU=");
+			sound.play();
+		}
+
+		function startBeeping(value, threshold, beepCount, indicator) {
+			beeping = true;
+			let indicatorElem = document.getElementById(indicator);
+			indicatorElem.style.display = 'block';
+			setTimeout(() => {
+				indicatorElem.style.opacity = 1;
+			}, 300);
+
+			let count = 0;
+			beepInterval = setInterval(() => {
+				if (count >= beepCount) {
+					stopBeeping(indicator);
+				} else {
+					beep();
+					count++;
+				}
+			}, 250);
+		}
+
+		function stopBeeping(indicator) {
+			beeping = false;
+			clearInterval(beepInterval);
+			//document.getElementById(indicator).style.display = 'none';
+		}
+
+		// function beep() {
+		// 	console.log('Beep!');
+		// 	const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+		// 	const oscillator = audioCtx.createOscillator();
+		// 	const gainNode = audioCtx.createGain();
+
+		// 	oscillator.connect(gainNode);
+		// 	gainNode.connect(audioCtx.destination);
+
+		// 	oscillator.type = 'square';
+		// 	oscillator.frequency.setValueAtTime(400, audioCtx.currentTime);
+		// 	gainNode.gain.setValueAtTime(1, audioCtx.currentTime);
+
+		// 	oscillator.start();
+		// 	setTimeout(() => {
+		// 		oscillator.stop();
+		// 		audioCtx.close();
+		// 	}, 100);  // 100 milliseconds beep duration
+		// }
+
+		function addEventListeners(thresholdId, activateId, checkMoreId, checkLessId, beepCountId, valueObservable, type) {
+			const threshold = document.getElementById(thresholdId);
+			const activateCheckbox = document.getElementById(activateId);
+			const checkMoreCheckbox = document.getElementById(checkMoreId);
+			const checkLessCheckbox = document.getElementById(checkLessId);
+			const beepCountInput = document.getElementById(beepCountId);
+
+			const check = () => {
+				checkValues(threshold, valueObservable.value, activateCheckbox, checkMoreCheckbox, checkLessCheckbox, beepCountInput, `indicator${thresholdId.replace('threshold', '')}`, type);
+			};
+
+			threshold.addEventListener('input', check);
+			activateCheckbox.addEventListener('change', check);
+			checkMoreCheckbox.addEventListener('change', check);
+			checkLessCheckbox.addEventListener('change', check);
+			beepCountInput.addEventListener('input', check);
+		}
+
+		addEventListeners('thresholdVoltage', 'activateVoltage', 'checkMoreVoltage', 'checkLessVoltage', 'beepCountVoltage', voltage, 'voltage');
+		addEventListeners('thresholdCurrent', 'activateCurrent', 'checkMoreCurrent', 'checkLessCurrent', 'beepCountCurrent', current, 'current');
+		addEventListeners('thresholdPower', 'activatePower', 'checkMorePower', 'checkLessPower', 'beepCountPower', power, 'power');
+
+		// Make voltage, current, and power accessible from the console for testing
+		window.voltage = voltage;
+		window.current = current;
+		window.power = power;
 	</script>
 </body>
 

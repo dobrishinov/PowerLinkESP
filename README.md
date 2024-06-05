@@ -19,6 +19,7 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 - **Persistent Information Bar:** Access live information about voltage, current, and power on a persistent bottom bar.
 - **Customizable History Range:** Set the history range in minutes for chart data.
 - **Customizable Update Frequency:** Set the update frequency in milliseconds for chart data.
+- **Customizable Threshold Alarms** Set custom threshold Alarm notifications with audible alerts when Voltage, Current, or Power reach specified values.
 
 ### Network Configuration
 
@@ -37,14 +38,22 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 
 ## UI Interface
 
-#### Big Screen - Dashboard
-![Big Screen - Dashboard](Images/UI/UI-1.PNG)
+#### Big Screen - All Charts
+![Big Screen - All Charts](Images/UI/v1.0.1/UI-1-1.0.1.PNG)
+
+#### Big Screen - Charts Configuration
+![Big Screen - Charts Configuration](Images/UI/v1.0.1/UI-2-1.0.1.PNG)
+
+#### Big Screen - Threshold Alarms
+![Big Screen - Threshold Alarms](Images/UI/v1.0.1/UI-3-1.0.1.PNG)
+
+![Big Screen - Threshold Alarms](Images/UI/v1.0.1/UI-4-1.0.1.PNG)
 
 #### Big Screen - Settings Page
 ![Nice-Power Bench Power](Images/UI/UI-2.PNG)
 
 #### Mobile Screen - Dashboard
-![Mobile Screen - Dashboard](Images/UI/UI-4.PNG)
+![Mobile Screen - Dashboard](Images/UI/v1.0.1/UI-5-1.0.1.PNG)
 
 When we scrolling the top display with values is hidden, but we have handy pinned display with the values at the bottom.
 
@@ -175,15 +184,13 @@ Below is a list of upcoming features and enhancements:
 
 :hourglass_flowing_sand: Update README regularly.
 
-:heavy_check_mark: Add option to set the update frequency for the charts.
+:heavy_check_mark: Added option to set the update frequency for the charts.
 
-:heavy_check_mark: Add favicon with nice power icon.
+:heavy_check_mark: Added favicon with nice power icon.
 
-:rainbow: Add threshold notifications with audible alerts when Voltage, Current, or Power reach specified values..
+:heavy_check_mark: Added Alarm threshold notifications with audible alerts when Voltage, Current, or Power reach specified values..
 
-:star: More Soon...
-
-Feel free to suggest new features or improvements by opening an issue or submitting a pull request. Your contributions are always welcome!
+:star: :rainbow: :star: Feel free to suggest new features or improvements by opening an issue or submitting a pull request. Your contributions are always welcome!
 
 ## Contributing
 
