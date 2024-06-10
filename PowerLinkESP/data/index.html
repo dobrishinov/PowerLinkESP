@@ -277,17 +277,17 @@
 		}
 
 		.alert.voltage {
-			background-color: #f44336;
+			background-color: #ed6a60;
 			text-shadow: #000 1px 1px 5px;
 		}
 
 		.alert.current {
-			background-color: #1313fb;
+			background-color: #5e5ef3;
 			text-shadow: #000 1px 1px 5px;
 		}
 
 		.alert.power {
-			background-color: #08800f;
+			background-color: #619d65;
 			text-shadow: #000 1px 1px 5px;
 		}
 
@@ -304,7 +304,7 @@
 		}
 
 		.closebtn:hover {
-			color: black;
+			color: #c1c1c1;
 		}
 
 		#alarmsConfig {
@@ -1151,34 +1151,13 @@
 					beep();
 					count++;
 				}
-			}, 250);
+			}, 350);
 		}
 
 		function stopBeeping(indicator) {
 			beeping = false;
 			clearInterval(beepInterval);
-			//document.getElementById(indicator).style.display = 'none';
 		}
-
-		// function beep() {
-		// 	console.log('Beep!');
-		// 	const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-		// 	const oscillator = audioCtx.createOscillator();
-		// 	const gainNode = audioCtx.createGain();
-
-		// 	oscillator.connect(gainNode);
-		// 	gainNode.connect(audioCtx.destination);
-
-		// 	oscillator.type = 'square';
-		// 	oscillator.frequency.setValueAtTime(400, audioCtx.currentTime);
-		// 	gainNode.gain.setValueAtTime(1, audioCtx.currentTime);
-
-		// 	oscillator.start();
-		// 	setTimeout(() => {
-		// 		oscillator.stop();
-		// 		audioCtx.close();
-		// 	}, 100);  // 100 milliseconds beep duration
-		// }
 
 		function addEventListeners(thresholdId, activateId, checkMoreId, checkLessId, beepCountId, valueObservable, type) {
 			const threshold = document.getElementById(thresholdId);
@@ -1201,11 +1180,6 @@
 		addEventListeners('thresholdVoltage', 'activateVoltage', 'checkMoreVoltage', 'checkLessVoltage', 'beepCountVoltage', voltage, 'voltage');
 		addEventListeners('thresholdCurrent', 'activateCurrent', 'checkMoreCurrent', 'checkLessCurrent', 'beepCountCurrent', current, 'current');
 		addEventListeners('thresholdPower', 'activatePower', 'checkMorePower', 'checkLessPower', 'beepCountPower', power, 'power');
-
-		// Make voltage, current, and power accessible from the console for testing
-		window.voltage = voltage;
-		window.current = current;
-		window.power = power;
 	</script>
 </body>
 

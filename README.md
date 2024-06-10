@@ -19,7 +19,7 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 - **Persistent Information Bar:** Access live information about voltage, current, and power on a persistent bottom bar.
 - **Customizable History Range:** Set the history range in minutes for chart data.
 - **Customizable Update Frequency:** Set the update frequency in milliseconds for chart data.
-- **Customizable Threshold Alarms** Set custom threshold Alarm notifications with audible alerts when Voltage, Current, or Power reach specified values.
+- **Customizable Threshold Alarms:** Set custom threshold Alarm notifications with audible alerts when Voltage, Current, or Power reach specified values.
 
 ### Network Configuration
 
@@ -93,8 +93,17 @@ When we scrolling the top display with values is hidden, but we have handy pinne
 
 ## Installation
 
-1. **Clone the Repository:**
+1. **Clone the Repository (Latest Version):**
    [git clone https://github.com/yourusername/powerlink-esp.git](https://github.com/dobrishinov/PowerLinkESP.git)
+   
+   **OR**
+
+   **Get the Latest Stable Release:**
+   - If you prefer a stable release, follow these steps:
+      - Visit the repository’s releases page.
+      - Look for the desired version (usually tagged as "Stable").
+      - Download the release package associated with that version.
+      - Extract the contents to your preferred location.
 
 2. **Setup Arduino IDE:**
    - Download and Install Arduino IDE:
@@ -182,13 +191,13 @@ There is two working modes:
 
 Below is a list of upcoming features and enhancements:
 
+:heavy_check_mark: [Done] Added option to set the update frequency for the charts.
+
+:heavy_check_mark: [Done] Added favicon with nice power icon.
+
+:heavy_check_mark: [Done] Added Alarm threshold notifications with audible alerts when Voltage, Current, or Power reach specified values..
+
 :hourglass_flowing_sand: Update README regularly.
-
-:heavy_check_mark: Added option to set the update frequency for the charts.
-
-:heavy_check_mark: Added favicon with nice power icon.
-
-:heavy_check_mark: Added Alarm threshold notifications with audible alerts when Voltage, Current, or Power reach specified values..
 
 :star: :rainbow: :star: Feel free to suggest new features or improvements by opening an issue or submitting a pull request. Your contributions are always welcome!
 
