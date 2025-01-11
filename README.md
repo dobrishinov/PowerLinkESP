@@ -203,7 +203,9 @@ Below is a list of upcoming features and enhancements:
 
 ## Contributing
 
-Contributions from the community is welcome! I'll be happy for further enhance the functionality and usability of PowerLinkESP. Whether you're a seasoned developer or a passionate enthusiast, your contributions are invaluable to shared success. Feel free to explore the repository, open issues, submit pull requests, or engage in discussions to contribute to the ongoing development efforts.
+Contributions from the community is welcome! I'll be happy for further enhance the functionality and usability of PowerLinkESP. Whether you're a seasoned developer or a passionate enthusiast, your contributions are invaluable to shared success. 
+In the Documents directory, you’ll find a useful document explaining how the serial port protocol works. This protocol may also be applicable to power supplies from other brands.
+Feel free to explore the repository, open issues, submit pull requests, or engage in discussions to contribute to the ongoing development efforts.
 
 ## License
 
