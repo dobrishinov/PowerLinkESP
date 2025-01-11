@@ -2,8 +2,8 @@
 
 PowerLinkESP is an advanced firmware designed to enhance Nice-Power bench power supplies with ESP8266 connectivity, providing advanced monitoring and control capabilities.
 
-![Different Devices with the software](Images/UI/Devices.png)
-![Nice-Power Bench Power Supply](Images/Device/1-Nicepower-Kuai-SPS-W3010.jpg)
+![Different Devices with the software](Documents/Images/UI/Devices.png)
+![Nice-Power Bench Power Supply](Documents/Images/Device/1-Nicepower-Kuai-SPS-W3010.jpg)
 
 ## Overview
 
@@ -39,57 +39,57 @@ PowerLinkESP revolutionizes the interaction with Nice-Power bench power supplies
 ## UI Interface
 
 #### Big Screen - All Charts
-![Big Screen - All Charts](Images/UI/v1.0.1/UI-1-1.0.1.PNG)
+![Big Screen - All Charts](Documents/Images/UI/v1.0.1/UI-1-1.0.1.PNG)
 
 #### Big Screen - Charts Configuration
-![Big Screen - Charts Configuration](Images/UI/v1.0.1/UI-2-1.0.1.PNG)
+![Big Screen - Charts Configuration](Documents/Images/UI/v1.0.1/UI-2-1.0.1.PNG)
 
 #### Big Screen - Threshold Alarms
-![Big Screen - Threshold Alarms](Images/UI/v1.0.1/UI-3-1.0.1.PNG)
+![Big Screen - Threshold Alarms](Documents/Images/UI/v1.0.1/UI-3-1.0.1.PNG)
 
-![Big Screen - Threshold Alarms](Images/UI/v1.0.1/UI-4-1.0.1.PNG)
+![Big Screen - Threshold Alarms](Documents/Images/UI/v1.0.1/UI-4-1.0.1.PNG)
 
 #### Big Screen - Settings Page
-![Nice-Power Bench Power](Images/UI/UI-2.PNG)
+![Nice-Power Bench Power](Documents/Images/UI/UI-2.PNG)
 
 #### Mobile Screen - Dashboard
-![Mobile Screen - Dashboard](Images/UI/v1.0.1/UI-5-1.0.1.PNG)
+![Mobile Screen - Dashboard](Documents/Images/UI/v1.0.1/UI-5-1.0.1.PNG)
 
 When we scrolling the top display with values is hidden, but we have handy pinned display with the values at the bottom.
 
-![Mobile Screen - Dashboard](Images/UI/UI-5.PNG)
+![Mobile Screen - Dashboard](Documents/Images/UI/UI-5.PNG)
 
 ## Hardware Setup
 
 **Wiring Schematic:**
 
-![Simple Schematic](Images/Device/Schematic.png)
+![Simple Schematic](Documents/Images/Device/Schematic.png)
 
 - Refer to the provided wiring schematic for proper connection between the Wemos D1 mini microcontroller and the Nice-Power bench power supply via UART.
 
-![Nice-Power UART Port](Images/Device/1-Inside.jpg)
+![Nice-Power UART Port](Documents/Images/Device/1-Inside.jpg)
 
 - You need to connect Nice-Power supply UART Port to the WEMOS D1 Mini.
 - RX from Nice-Power needs to be connected to the D5 pin on the WEMOS D1 Mini
 - TX from Nice-Power needs to be connected to the D6 pin on the WEMOS D1 Mini
 - We need to connect GND Pin to the WEMOS D1 Mini GND pin and also to the Nice-Power USB GND pin.
 
-![Nice-Power UART Port](Images/Device/2-Inside.jpg)
+![Nice-Power UART Port](Documents/Images/Device/2-Inside.jpg)
 
 - We need to power the WEMOS D1 Mini from the Nice-Power supply USB port.
 
-![Nice-Power UART Port](Images/Device/3-Inside.jpg)
+![Nice-Power UART Port](Documents/Images/Device/3-Inside.jpg)
 
-![Nice-Power UART Port](Images/Device/4-Inside.jpg)
+![Nice-Power UART Port](Documents/Images/Device/4-Inside.jpg)
 
-![Nice-Power UART Port](Images/Device/5-Inside.jpg)
+![Nice-Power UART Port](Documents/Images/Device/5-Inside.jpg)
 
 **3D Printed Case for Wemos D1 mini:**
 
 - I used this 3D printed case designed specifically for the Wemos D1 mini microcontroller - https://makerworld.com/en/models/20157
 - You can find also the STL files in "3DModelCaseFiles" directory. 
 
-![3D Printed Case](Images/3DModelCase/3DModelWemosCase.PNG)
+![3D Printed Case](Documents/Images/3DModelCase/3DModelWemosCase.PNG)
 
 ## Installation
 
